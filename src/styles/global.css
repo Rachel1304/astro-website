@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@theme {
+  --color-red: hsl(353, 78%, 62%);
+  --color-darkblue: hsl(212.6, 63.6%, 10.8%);
+  --color-white: hsl(354, 100%, 98%);
+  --color-blue: hsl(210, 100%, 80%);
+  --color-black: hsl(0, 0%, 8.6%);
+}
+
+body {
+  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}

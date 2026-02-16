@@ -1,0 +1,150 @@
+---
+import LogoSecondaire from '../components/LogoSecondaire.astro'
+import Arrow from './Arrow.astro'
+import Layout from '../layouts/Layout.astro'
+---
+
+<header class="relative">
+  <div
+    id="header"
+    class="fixed flex w-full h-16 items-center justify-between px-10 bg-darkblue z-[100]"
+  >
+    <a
+      href="/"
+      class="flex z-[101]"
+    >
+      <LogoSecondaire class="max-w-28 h-auto block" />
+    </a>
+
+    <nav class="hidden md:flex gap-8 items-center text-white font-medium">
+      <a
+        href="/projets"
+        class="group relative flex items-center transition-all duration-300"
+        ><span
+          class="transition-transform duration-300 group-hover:-translate-x-2"
+          >Projets</span
+        >
+        <div
+          class="absolute left-full opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-2"
+        >
+          <Arrow foreground="var(--color-white)" />
+        </div>
+      </a>
+      <a
+        href="/a-propos"
+        class="group flex items-center gap-4 transition-all"
+        >À propos
+        <div
+          class="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+        >
+          <Arrow foreground="var(--color-white)" />
+        </div></a
+      >
+      <a
+        href="/contact"
+        class="group flex items-center gap-4 transition-all"
+        >Contact
+        <div
+          class="opacity-0 -translate-x-2 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-0"
+        >
+          <Arrow foreground="var(--color-white)" />
+        </div></a
+      >
+    </nav>
+
+    <button
+      id="menuBtn"
+      class="md:hidden relative w-10 h-10 flex items-center justify-center z-[100] focus:outline-none"
+    >
+      <span
+        id="line1"
+        class="absolute w-8 h-0.5 bg-white transition-all duration-300 translate-y-[-5px]"
+      ></span>
+      <span
+        id="line2"
+        class="absolute w-8 h-0.5 bg-white transition-all duration-300 translate-y-[5px]"
+      ></span>
+    </button>
+  </div>
+
+  <div
+    id="menuOverlay"
+    class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] hidden opacity-0 transition-opacity duration-300"
+  >
+  </div>
+
+  <div
+    id="mobileMenu"
+    class="fixed inset-0 w-[80%] bg-darkblue z-[90] flex flex-col items-start justify-center px-10 gap-8 text-3xl font-semibold text-white transition-transform duration-500 -translate-x-full shadow-2xl pt-20"
+  >
+    <a
+      href="/projets"
+      class="menu-link hover:pl-4 transition-all uppercase"
+      >Projets</a
+    >
+    <a
+      href="/a-propos"
+      class="menu-link hover:pl-4 transition-all uppercase"
+      >À propos</a
+    >
+    <a
+      href="/contact"
+      class="menu-link hover:pl-4 transition-all uppercase"
+      >Contact</a
+    >
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn')
+  const mobileMenu = document.getElementById('mobileMenu')
+  const menuOverlay = document.getElementById('menuOverlay')
+  const line1 = document.getElementById('line1')
+  const line2 = document.getElementById('line2')
+
+  function toggleMenu() {
+    const isOpen = mobileMenu?.classList.contains('translate-x-0')
+
+    if (!isOpen) {
+      // OUVRIR
+      mobileMenu?.classList.remove('-translate-x-full')
+      mobileMenu?.classList.add('translate-x-0')
+      menuOverlay?.classList.remove('hidden')
+      setTimeout(() => menuOverlay?.classList.add('opacity-100'), 10)
+      document.body.style.overflow = 'hidden'
+
+      // ANIMER BURGER -> CROIX
+      line1?.classList.remove('translate-y-[-5px]')
+      line1?.classList.add('rotate-45')
+      line2?.classList.remove('translate-y-[5px]')
+      line2?.classList.add('-rotate-45')
+    } else {
+      // FERMER
+      mobileMenu?.classList.remove('translate-x-0')
+      mobileMenu?.classList.add('-translate-x-full')
+      menuOverlay?.classList.remove('opacity-100')
+      setTimeout(() => menuOverlay?.classList.add('hidden'), 300)
+      document.body.style.overflow = ''
+
+      // ANIMER CROIX -> BURGER
+      line1?.classList.remove('rotate-45')
+      line1?.classList.add('translate-y-[-5px]')
+      line2?.classList.remove('-rotate-45')
+      line2?.classList.add('translate-y-[5px]')
+    }
+  }
+
+  menuBtn?.addEventListener('click', toggleMenu)
+  menuOverlay?.addEventListener('click', toggleMenu)
+</script>
+
+<style>
+  .bg-darkblue {
+    background-color: #001524; /* Ton bleu sombre */
+  }
+
+  /* Optionnel : Assure-toi que les liens ne se chevauchent pas avec le logo lors du scroll */
+  .menu-link {
+    transition: all 0.3s ease-in-out;
+  }
+</style>

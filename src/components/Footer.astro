@@ -1,0 +1,75 @@
+---
+import LogoPrincipale from './LogoPrincipale.astro'
+import SocialLink from './SocialLink.astro'
+import LogoWhatsApp from '../assets/LogoWhatsApp.png'
+import LogoOutlook from '../assets/LogoOutlook.png'
+import LogoLinkedin from '../assets/LogoLinkedin.png'
+import LogoInstagram from '../assets/LogoInstagram.png'
+import LogoBehance from '../assets/LogoBehance.png'
+---
+
+<footer
+  class="mt-auto flex flex-col w-full self-end bg-darkblue px-10 pt-10 pb-40"
+>
+  <div class="flex overflow-hidden items-center p-10 pb-20">
+    <LogoPrincipale class="w-64 h-auto" />
+  </div>
+
+  <div class="flex justify-between items-start gap-6">
+    <div class="flex flex-col gap-4 items-start">
+      <SocialLink
+        href="https://wa.me/33642049542"
+        src={LogoWhatsApp}
+        texte="WhatsApp"
+        alt="Contacte moi par WhatsApp"
+      />
+      <SocialLink
+        href="mailto:rachel.bastie@outlook.fr"
+        src={LogoOutlook}
+        texte="Outlook"
+        alt="Envoie moi un mail sur Outlook"
+      />
+    </div>
+    <div class="flex flex-col gap-4">
+      <SocialLink
+        href="https://www.linkedin.com/in/rachel-bastie/"
+        src={LogoLinkedin}
+        texte="Linkedin"
+        alt="Retrouve moi sur Linkedin"
+      />
+      <SocialLink
+        href="https://www.instagram.com/rachel_bastie/"
+        src={LogoInstagram}
+        texte="Intagram"
+        alt="Retrouve moi sur Instagram"
+      />
+      <SocialLink
+        href="https://www.behance.net/rachelbastie"
+        src={LogoBehance}
+        texte="Behance"
+        alt="Regarde mon Behance"
+      />
+    </div>
+  </div>
+  <hr class="border-t border-white my-10 w-full px-10" />
+  <div>
+    <p class="flex font-semibold mx-auto items-center justify-between">
+      <a
+        href="tel:+33642049542"
+        class="text-sm text-white hover:text-[var(--color-blue)] no-underline"
+      >
+        06.42.04.95.42
+      </a>
+
+      <a
+        href="mailto:rachel.bastie@outlook.fr"
+        class="text-sm text-white hover:text-[var(--color-blue)] no-underline"
+      >
+        rachel.bastie@outlook.fr
+      </a>
+    </p>
+  </div>
+  <p class="flex justify-center pt-20 text-white text-xs font-semibold ml-6">
+    © 2026 Rachel Bastie. Tous droits réservés.
+  </p>
+</footer>

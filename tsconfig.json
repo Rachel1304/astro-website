@@ -1,5 +1,9 @@
 {
   "extends": "astro/tsconfigs/strict",
   "include": [".astro/types.d.ts", "**/*"],
-  "exclude": ["dist"]
+  "exclude": ["dist"],
+  "compilerOptions": {
+    "strictNullChecks": true, // ajouter si vous utilisez le modèle `base`
+    "allowJs": true // requis et inclus avec tous les modèles Astro
+  }
 }

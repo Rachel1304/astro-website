@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content'
+import LogoPrincipale from '../../components/LogoPrincipale.astro'
+import Arrow from '../../components/Arrow.astro'
+
+// 1. Génére un nouveau chemin pour chaque entrée de collection
+export async function getStaticPaths() {
+  const posts = await getCollection('projets')
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }))
+}
+// 2. Pour votre modèle, vous pouvez obtenir l'entrée directement à partir de la propriété
+const { post } = Astro.props
+const { Content } = await render(post)
+---
+
+<a
+  href="#"
+  target="_self"
+  style="flex font-semibold text-sm text-black"
+>
+  <Arrow foreground="var(--color-black)/" />
+  HOME
+</a>
+
+<h2>Projets</h2>
+<LogoPrincipale />
+
+<Content />

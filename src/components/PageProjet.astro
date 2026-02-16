@@ -1,0 +1,32 @@
+---
+import Arrow from './Arrow.astro'
+import type { ImageMetadata } from 'astro'
+interface Props {
+  images: {
+    src: ImageMetadata
+    alt: string
+  }[]
+}
+---
+
+<a
+  href="/src/pages/index.astro"
+  target="_blank"
+>
+  <div class="flex items-center">
+    <Arrow foreground="var(--color-black)" />
+    <p
+      class="font-semibold ml-auto"
+      style="font-family: 'Lora', 'serif';"
+    >
+      Home
+    </p>
+  </div>
+</a>
+
+<div class="flex flex-col">
+  <Image
+    src={Astro.props.images.src}
+    alt={Astro.props.images.alt}
+  />
+</div>
