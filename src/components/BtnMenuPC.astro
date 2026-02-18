@@ -1,0 +1,25 @@
+---
+import Arrow from './Arrow.astro'
+
+interface Props {
+  texte: string
+  lien: string
+}
+---
+
+<a
+  target="_self"
+  href={Astro.props.lien}
+  class="relative group flex p-2"
+>
+  <span
+    class="transition-transform duration-200 ease-out group-hover:translate-x-1"
+  >
+    {Astro.props.texte}
+  </span>
+  <span
+    class="absolute -bottom-0.5 right-2 transition-transform duration-400 ease-out translate-x-[-100%] opacity-0 group-hover:delay-50 group-hover:translate-x-2 group-hover:opacity-100"
+  >
+    <Arrow foreground="var(--color-blue)" />
+  </span>
+</a>

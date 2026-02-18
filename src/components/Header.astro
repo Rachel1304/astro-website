@@ -1,9 +1,158 @@
 ---
-import LogoSecondaire from '../components/LogoSecondaire.astro'
+import LogoSecondaire from './LogoSecondaire.astro'
+
+import SocialLink from './SocialLink.astro'
+import LogoWhatsApp from '../assets/LogoWhatsApp.png'
+import LogoOutlook from '../assets/LogoOutlook.png'
+import LogoLinkedin from '../assets/LogoLinkedin.png'
+import LogoInstagram from '../assets/LogoInstagram.png'
+import LogoBehance from '../assets/LogoBehance.png'
+
 import Arrow from './Arrow.astro'
-import Layout from '../layouts/Layout.astro'
+import BtnMenuPC from './BtnMenuPC.astro'
 ---
 
+<header class="fixed w-full bg-darkblue px-10 py-2 z-8">
+  <nav class="flex w-full justify-between items-center py-2 md:py-0 z-10">
+    <LogoSecondaire class="z-10" />
+    <div class="hidden md:flex items-center text-white font-semibold gap-6">
+      <BtnMenuPC
+        texte="Projets"
+        lien="/projets"
+      />
+      <BtnMenuPC
+        texte="À propos"
+        lien="/a-propos"
+      />
+      <BtnMenuPC
+        texte="Contact"
+        lien="/contact"
+      />
+    </div>
+    <button
+      id="burgerBtn"
+      class="md:hidden relative w-10 h-8 flex items-center justify-center"
+    >
+      <span
+        id="ligne1"
+        class="absolute bg-white w-8 h-0.5 transition-all duration-300 -translate-y-1"
+      ></span>
+      <span
+        id="ligne2"
+        class="absolute bg-white w-8 h-0.5 transition-all duration-300 translate-y-1"
+      ></span>
+    </button>
+  </nav>
+</header>
+
+<div
+  id="mobileMenu"
+  class="md:hidden fixed inset-0 z-7 w-[80%] bg-darkblue flex flex-col justify-center px-5 text-white transition-transform duration-500 -translate-x-full"
+>
+  <div
+    class="flex flex-3 flex-col font-medium text-2xl gap-8 items-center pt-50 justify-center"
+  >
+    <BtnMenuPC
+      texte="Projets"
+      lien="/projets"
+    />
+    <BtnMenuPC
+      texte="À propos"
+      lien="/a-propos"
+    />
+    <BtnMenuPC
+      texte="Contact"
+      lien="/contact"
+    />
+  </div>
+  <div class="flex flex-col flex-1 items-center justify-center gap-6">
+    <div class="flex items-center justify-between gap-2">
+      <SocialLink
+        href="https://wa.me/33642049542"
+        src={LogoWhatsApp}
+        texte=""
+        alt="Contacte moi par WhatsApp"
+      />
+      <SocialLink
+        href="mailto:rachel.bastie@outlook.fr"
+        src={LogoOutlook}
+        texte=""
+        alt="Envoie moi un mail sur Outlook"
+      />
+      <SocialLink
+        href="https://www.linkedin.com/in/rachel-bastie/"
+        src={LogoLinkedin}
+        texte=""
+        alt="Retrouve moi sur Linkedin"
+      />
+      <SocialLink
+        href="https://www.instagram.com/rachel_bastie/"
+        src={LogoInstagram}
+        texte=""
+        alt="Retrouve moi sur Instagram"
+      />
+      <SocialLink
+        href="https://www.behance.net/rachelbastie"
+        src={LogoBehance}
+        texte=""
+        alt="Regarde mon Behance"
+      />
+    </div>
+    <div class="flex flex-col items-center justify-center gap-2">
+      <p class="text-white text-xs font-semibold ml-6">
+        © 2026 Rachel Bastie. Tous droits réservés.
+      </p>
+    </div>
+  </div>
+</div>
+<div
+  id="overlay"
+  class="fixed inset-0 bg-black/40 backdrop-blur-sm opacity-0 pointer-events-none transition-opacity duration-500"
+>
+</div>
+
+<script>
+  import { string } from 'astro:schema'
+
+  const burgerBtn = document.getElementById('burgerBtn')
+  const mobileMenu = document.getElementById('mobileMenu')
+  const overlay = document.getElementById('overlay')
+  const ligne1 = document.getElementById('ligne1')
+  const ligne2 = document.getElementById('ligne2')
+
+  function toggleMenu() {
+    const isOpen = mobileMenu?.classList.contains('translate-x-0')
+
+    if (!isOpen) {
+      mobileMenu?.classList.remove('-translate-x-full')
+      mobileMenu?.classList.add('translate-x-0')
+
+      overlay?.classList.remove('opacity-0', 'pointer-events-none')
+      overlay?.classList.add('opacity-100', 'pointer-events-auto')
+
+      ligne1?.classList.add('-rotate-45', 'translate-y-0')
+      ligne1?.classList.remove('-translate-y-1')
+      ligne2?.classList.add('rotate-45', 'translate-y-0')
+      ligne2?.classList.remove('translate-y-1')
+    } else {
+      mobileMenu?.classList.remove('translate-x-0')
+      mobileMenu?.classList.add('-translate-x-full')
+
+      overlay?.classList.remove('opacity-100', 'pointer-events-auto')
+      overlay?.classList.add('opacity-0', 'pointer-events-none')
+
+      ligne1?.classList.remove('-rotate-45', 'translate-y-0')
+      ligne1?.classList.add('-translate-y-1')
+      ligne2?.classList.remove('rotate-45', 'translate-y-0')
+      ligne2?.classList.add('translate-y-1')
+    }
+  }
+
+  burgerBtn?.addEventListener('click', toggleMenu)
+  overlay?.addEventListener('click', toggleMenu)
+</script>
+
+<!-- 
 <header class="relative">
   <div
     id="header"
@@ -148,3 +297,4 @@ import Layout from '../layouts/Layout.astro'
     transition: all 0.3s ease-in-out;
   }
 </style>
+ -->

@@ -69,18 +69,18 @@ interface Props {
       <a
       href={Astro.props.slug}
       target="_self"
-      class="shrink-0 ml-auto flex self-start items-center translate-y-1 border-2 rounded-full py-px pl-2 pr-4 overflow-hidden gap-4" 
+      class="shrink-0 ml-auto flex self-start items-center border-2 rounded-full px-2 py-1 overflow-hidden gap-2" 
       style={{color:Astro.props.foreground, borderColor:Astro.props.foreground}}
     >
-      <span class="tracking-widest text-xs font-medium">See</span>
+      <p class="tracking-widest text-xs font-medium">See</p>
       <Arrow foreground={Astro.props.foreground}/>
     </a>
     </div>
-    <div class="flex flex-wrap items-center gap-x-1" >
+    <div class="flex flex-wrap items-center gap-x-2" >
         {
           Astro.props.tags.map((t) => (
             <span class=" uppercase tracking-widest text-xs shrink-0">{t}</span>
-             <p class=" -translate-y-px">|</p> 
+             <span class="w-0.25 h-4" style={{backgroundColor:Astro.props.foreground}}></span> 
           ))
         }
       </div>
