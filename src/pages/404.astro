@@ -1,8 +1,22 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import Header from '../components/Header.astro'
+import BtnRetour from '../components/BtnRetour.astro'
 ---
 
 <Layout>
-  <Header />
+  <div
+    class="flex flex-col w-screen h-[60vh] items-center justify-center gap-20 px-[10vh]"
+  >
+    <div class="flex flex-col items-center justify-center gap-4 text-center">
+      <h1>Erreur de parcours.</h1>
+      <p>
+        Même les meilleurs créatifs font parfois fausse route. <br /> Celle-ci mène
+        à une impasse, mais mon portfolio mène à de belles solutions.
+      </p>
+    </div>
+    <BtnRetour
+      texte="HOME"
+      lien="/"
+    />
+  </div>
 </Layout>

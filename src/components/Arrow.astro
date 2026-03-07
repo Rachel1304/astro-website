@@ -1,13 +1,28 @@
 ---
 interface Props {
   foreground: string
+  variant?: 'classic' | 'rotate'
+  size?: 'medium' | 'large'
 }
+
+// On définit la classe de rotation
+const rotationClass = Astro.props.variant === 'rotate' ? ' rotate-180' : ''
+
+const sizeClasses = {
+  medium: 'w-6 md:w-8',
+  large: 'w-14 md:w-16',
+}
+
+// L'astuce est ici : si Astro.props.size est undefined, on utilise 'medium'
+// Le "as 'medium' | 'large'" aide TypeScript à confirmer que la clé est valide
+const selectedSize = Astro.props.size || 'medium'
+const currentSizeClass = sizeClasses[selectedSize as 'medium' | 'large']
 ---
 
 <svg
   id="Calque_1"
   data-name="Calque 1"
-  class="w-6 shrink-0 md:w-8"
+  class={`shrink-0 ${currentSizeClass}${rotationClass}`}
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 105.07 36.21"
   fill={Astro.props.foreground}

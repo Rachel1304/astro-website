@@ -1,0 +1,30 @@
+---
+import { getCollection, render } from 'astro:content'
+export async function getStaticPaths() {
+  const posts = await getCollection('projets')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+const { post } = Astro.props
+const { foreground, tags } = post.data
+---
+
+<div class="flex
+      gap-2
+      items-center">
+  {
+    tags.map((t, index) => (
+      <>
+        <span class="uppercase tracking-widest text-xs shrink-0">{t}</span>
+        {index < tags.length - 1 && (
+          <span
+            class="w-0.25 h-4"
+            style={{ backgroundColor: foreground }}
+          />
+        )}
+      </>
+    ))
+  }
+</div>

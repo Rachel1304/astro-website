@@ -1,0 +1,102 @@
+---
+id: magazine-todays-points
+slug: magazine-todays-points
+titre: "Today’s Points"
+tags: ["Direction artistique", "Stratégie de marque"]
+bgColor: "#C2C2C2"
+foreground: "#FFFFFF"
+couleurFondBtn: ""
+lieu: ""
+date: "2024-12-01"
+cover1: {
+  src: "../../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_couverture.png",
+  alt: "Couverture du magazine Today's Points"
+}
+cover2: {
+  src: "../../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_01.png",
+  alt: "Mise en page intérieure du magazine"
+}
+cover3: {
+  src: "../../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_02.png",
+  alt: "Détails des rubriques et illustrations"
+}
+---
+import { Image } from 'astro:assets';
+import magCover from "../../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_couverture.png";
+import magDetail1 from "../../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_01.png"
+import magDetail2 from "../../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_02.png"
+
+
+
+
+<div class="flex gap-12 w-full max-w-4xl flex-col">
+<h1 class="sr-only">Magazine Today's Points</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">L'information nomade au format A5</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Today’s Points est un magazine conçu pour accompagner le lecteur dans son quotidien, que ce soit dans le bus ou au bureau. L'idée était de créer un objet éditorial **facile à transporter** et rapide à consulter, structuré autour de quatre piliers :
+      <ul class="list-disc ml-6 mb-4">
+        <li>**Évènements**</li>
+        <li>**Santé**</li>
+        <li>**Environnement**</li>
+        <li>**Politique**</li>
+      </ul>
+
+      Le titre évoque les "points clés" du jour, offrant une synthèse efficace de l'actualité sous forme de bannières thématiques.
+
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Hiérarchisation et lisibilité</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      L'objectif principal était de marier l'aspect trL'enjeu était de créer un support informatif segmenté en quatre bannières thématiques pour offrir un choix de lecture simple et immédiat, soutenu par un design dynamique mêlant photos et illustrations.
+
+    </div>
+  </div>
+  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full md:flex-3 h-[30vh] md:h-full">
+      <Image src={magDetail1} alt="Aperçu des pages intérieures" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="w-full md:flex-2 h-[30vh] md:h-full">
+      <Image src={magDetail2} alt="Détails du design et des rubriques" class="w-full h-full object-cover shadow-lg" />
+    </div>
+  </div>
+</div>
+    <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      La direction artistique repose sur une hiérarchisation stricte de l'information, facilitée par une colorimétrie symbolique.
+
+      ### 1. Stratégie Colorimétrique
+      Pour permettre au lecteur de retrouver l'information "facilement et rapidement", chaque couleur a été choisie pour sa puissance évocatrice :
+      <div class="prose prose-invert max-w-none px-6 py-4 mt-4 mb-8 overflow-x-auto border-1 border-bg-(var(--color-darkblue)) [&_td]:py-4 [&_td]:px-4 [&_tr]:border-b [&_tr]:border-white/10">
+        | RUBRIQUE | JUSTIFICATIONS |
+        | :--- | :--- |
+        | **Politique**<br/><span class="text-xs md:text-sm opacity-70">Rouge Rouille</span> | Couleur de la force et de la gravité. Elle rappelle l'intensité des débats et s'ancre dans l'histoire des luttes (Révolution française, mouvements ouvriers). |
+        | **Évènements**<br/><span class="text-xs md:text-sm opacity-70">Jaune Soleil / Orange</span> | Un mélange d'énergie solaire et de festivités. Cette association symbolise les moments importants depuis l'Antiquité et la Renaissance. |
+        | **Santé**<br/><span class="text-xs md:text-sm opacity-70">Vert Émeraude</span> | Symbole de l'équilibre et du soin. Elle fait écho au code visuel universel de la croix de pharmacie. |
+        | **Environnement**<br/><span class="text-xs md:text-sm opacity-70">Vert Sapin</span> | Une représentation directe de l'écosystème, de la forêt et des terres agricoles. |
+      </div>
+
+      ### 2. Choix Typographiques
+      J'ai sélectionné la famille **Le Monde** pour son lien avec l'univers journalistique. 
+      * **Le Monde Courrier :** Rappelle l'esthétique des machines à écrire journalistiques.
+      * **Le Monde Journal :** Un caractère "économique" et ouvert, garantit une **lisibilité optimale** dans le métro ou en marchant.
+
+      ### 3. Iconographie & Illustration
+      Le magazine alterne entre :
+      * **Retouches photos :** Traitées avec un léger filtre coloré propre à chaque rubrique.
+      * **Illustrations vectorielles :** Des dessins croqués puis retravaillés avec un aspect brut et du grain pour apporter de la personnalité et casser la rigueur de la mise en page.
+    
+    </div>
+  </div>
+</div>

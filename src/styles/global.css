@@ -6,7 +6,73 @@
   --color-white: hsl(354, 100%, 98%);
   --color-blue: hsl(210, 100%, 80%);
   --color-black: hsl(0, 0%, 8.6%);
+
+  --font-lora: "Lora", serif;
+  --font-neue-haas-grotesk-display-pro: "Neue Haas Grotesk Display Pro", sans-serif;
 }
+
+@layer base {
+  h1{
+    @apply text-5xl font-bold text-darkblue;
+  }
+  h2{
+    @apply text-3xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-4xl;}
+  }
+  h3{
+    @apply text-xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
+  }
+  h4{
+    @apply text-xl font-lora text-darkblue mb-0 mt-0 break-words;
+  }
+
+
+  strong{
+    @apply font-semibold;
+  }
+  p{
+    @apply text-base mb-2 tracking-wider;
+  }
+a {
+    @apply text-lg;
+  }
+  h3 + p {
+    @apply mt-0;
+  }
+
+  .subtitle-da {
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 0.025em;
+  text-transform: uppercase; /* Optionnel : pour un look très pro */
+  color: var(--color-darkblue); 
+}
+
+/* 1. On cible toutes les listes dans tes fichiers de contenu */
+ul {
+  list-style-type: disc !important; /* Force les points */
+  margin-left: 1.5rem !important;   /* Ajoute le décalage à gauche */
+  margin-bottom: 1rem;
+}
+
+ol {
+  list-style-type: decimal !important; /* Force les chiffres 1, 2, 3 */
+  margin-left: 1.5rem !important;      /* Ajoute le décalage à gauche */
+  margin-bottom: 1rem;
+}
+
+/* 2. On s'assure que les éléments de liste ont un peu d'espace */
+li {
+  padding-left: 0.5rem;
+  margin-bottom: 0.25rem;
+  display: list-item; /* Indispensable pour que la puce s'affiche */
+}
+
+
+  body {
+    margin: 0;
+    background-color: var(--color-white);
+    color: var(--color-darkblue);
+  }
 
 body {
   font-family: 'Neue Haas Grotesk Display Pro', sans-serif;

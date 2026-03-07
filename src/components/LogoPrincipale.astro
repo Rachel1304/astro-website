@@ -1,6 +1,11 @@
+---
+// Récupère la classe passée par le parent
+const { class: className } = Astro.props
+---
+
 <a href="/">
   <svg
-    class="w-64 h-auto"
+    class={className}
     width="650"
     height="234"
     viewBox="0 0 650 234"

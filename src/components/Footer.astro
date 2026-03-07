@@ -9,14 +9,18 @@ import LogoBehance from '../assets/LogoBehance.png'
 ---
 
 <footer
-  class="mt-auto flex flex-col w-full self-end bg-darkblue px-10 pt-10 pb-40"
+  class="mt-auto flex flex-col w-full self-end bg-darkblue px-10 pt-10 pb-20"
 >
-  <div class="flex overflow-hidden items-center p-10 pb-20">
-    <LogoPrincipale class="w-64 h-auto" />
+  <div
+    class="flex overflow-hidden items-center justify-center p-10 pb-15 md:pb-10 md:p-5"
+  >
+    <LogoPrincipale class="w-80 h-auto" />
   </div>
 
-  <div class="flex justify-between items-start gap-6">
-    <div class="flex flex-col gap-4 items-start">
+  <div
+    class="flex justify-between items-start gap-6 md:gap-12 md:justify-center"
+  >
+    <div class="flex flex-col gap-4 items-start md:flex-row md:gap-12">
       <SocialLink
         href="https://wa.me/33642049542"
         src={LogoWhatsApp}
@@ -30,7 +34,7 @@ import LogoBehance from '../assets/LogoBehance.png'
         alt="Envoie moi un mail sur Outlook"
       />
     </div>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-4 md:flex-row md:gap-12">
       <SocialLink
         href="https://www.linkedin.com/in/rachel-bastie/"
         src={LogoLinkedin}
@@ -52,24 +56,31 @@ import LogoBehance from '../assets/LogoBehance.png'
     </div>
   </div>
   <hr class="border-t border-white my-10 w-full px-10" />
-  <div>
-    <p class="flex font-semibold mx-auto items-center justify-between">
-      <a
-        href="tel:+33642049542"
-        class="text-sm text-white hover:text-[var(--color-blue)] no-underline"
+  <div class="flex w-full flex-col md:flex-row justify-between">
+    <div class="flex items-center justify-between">
+      <p
+        class="flex w-full flex-col md:items-start font-semibold mx-auto items-center justify-between"
       >
-        06.42.04.95.42
-      </a>
+        <a
+          href="tel:+33642049542"
+          class="text-white hover:text-[var(--color-blue)] no-underline"
+        >
+          06.42.04.95.42
+        </a>
 
-      <a
-        href="mailto:rachel.bastie@outlook.fr"
-        class="text-sm text-white hover:text-[var(--color-blue)] no-underline"
-      >
-        rachel.bastie@outlook.fr
-      </a>
-    </p>
+        <a
+          href="mailto:rachel.bastie@outlook.fr"
+          class="text-white hover:text-[var(--color-blue)] no-underline"
+        >
+          rachel.bastie@outlook.fr
+        </a>
+      </p>
+    </div>
+    <div
+      class="flex flex-col md:items-end justify-center items-center pt-10 md:pt-0"
+    >
+      <p class="flex text-white text-sm font-medium">© 2026 Rachel Bastie.</p>
+      <p class="flex text-white text-sm font-medium">Tous droits réservés.</p>
+    </div>
   </div>
-  <p class="flex justify-center pt-20 text-white text-xs font-semibold ml-6">
-    © 2026 Rachel Bastie. Tous droits réservés.
-  </p>
 </footer>

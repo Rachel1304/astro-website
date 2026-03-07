@@ -1,0 +1,93 @@
+---
+import { getCollection, render } from 'astro:content'
+import Arrow from '../../components/Arrow.astro'
+import Layout from '../../layouts/Layout.astro'
+import CardProjet from '../../components/CardProjet.astro'
+import { ordreProjets } from '../../ordre-projets'
+import { getEntry } from 'astro:content'
+import { undefined } from 'astro:schema'
+import Image from 'astro/components/Image.astro'
+import BtnRetour from '../../components/BtnRetour.astro'
+
+// 1. Génére un nouveau chemin pour chaque entrée de collection
+export async function getStaticPaths() {
+  const posts = await getCollection('projets')
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }))
+}
+// 2. Pour votre modèle, vous pouvez obtenir l'entrée directement à partir de la propriété
+const { post } = Astro.props
+const { Content } = await render(post)
+const { titre, bgColor, foreground, tags, lieu } = post.data
+
+const projets = await getCollection('projets')
+
+// 1. On trouve l'index du projet actuel dans la liste brute
+const currentIndex = ordreProjets.findIndex((p) => p === post.id)
+
+// 2. On calcule l'index du suivant (avec retour au début si c'est le dernier)
+const nextIndex = (currentIndex + 1) % ordreProjets.length
+const nextProjetId = ordreProjets[nextIndex]
+const nextProjet = await getEntry('projets', nextProjetId)
+console.log(nextProjetId)
+if (!nextProjet) {
+  return Astro.redirect('/404')
+}
+---
+
+<Layout>
+  <div class="fixed top-0 left-0 w-full h-[80vh] -z-10">
+    <Image
+      src={post.data.cover1.src}
+      alt={post.data.cover1.alt}
+      class="w-full h-full object-cover"
+    />
+  </div>
+  <div class="flex flex-col px-10 py-10 gap-8">
+    <BtnRetour
+      texte="HOME"
+      lien="/"
+    />
+  </div>
+
+  <div class="flex justify-center items-center">
+    <div class="flex flex-col w-full max-w-5xl">
+      <div class="flex absolute justify-end bottom-[35vh] right-15">
+        <div class="flex flex-col bg-white w-sm p-4 gap-4">
+          <h1>{post.data.titre}</h1>
+          <div class="flex flex-wrap gap-2">
+            {
+              post.data.tags.map((t) => (
+                <span class="uppercase tracking-widest text-[10px] px-3 py-1.5 border-1 border-red rounded-full inline-flex items-center justify-center font-medium">
+                  {t}
+                </span>
+              ))
+            }
+          </div>
+          <p>{new Date(post.data.date).getFullYear()}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    class="w-full bg-white flex flex-col gap-12 items-center justify-center mt-[55vh] px-10 py-10 pb-30 overflow-hidden"
+  >
+    <Content />
+  </div>
+  <CardProjet
+    variant="next"
+    titre={nextProjet.data.titre}
+    tags={nextProjet.data.tags}
+    couleurFondBtn={nextProjet.data.bgColor}
+    bgColor={nextProjet.data.bgColor}
+    foreground={nextProjet.data.foreground}
+    slug={nextProjet.data.slug}
+    date={nextProjet.data.date}
+    lieu={nextProjet.data.lieu}
+    cover1={nextProjet.data.cover1}
+    cover2={nextProjet.data.cover2}
+    cover3={nextProjet.data.cover3}
+  />
+</Layout>

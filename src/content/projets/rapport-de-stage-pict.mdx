@@ -1,0 +1,93 @@
+---
+id: rapport-de-stage-pict
+slug: rapport-de-stage-pict
+titre: "Rapport de stage chez PICT"
+tags: ["Direction artistique", "Webdesign","Landing page","HTML", "CSS"]
+bgColor: "#39737a"
+foreground: "var(--color-white)"
+couleurFondBtn: ""
+lieu: "Agence PICT"
+date: "2024-04-18"
+cover1: {
+  src: "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_02.png",
+  alt: "Photo double page du rapport de stage"
+}
+cover2: {
+  src: "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_03.png",
+  alt: "Détail mise en page rapport de stage"
+}
+cover3: {
+  src: "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_04.png",
+  alt: "Détail contenu rapport de stage"
+}
+---
+import { Image } from 'astro:assets';
+import rapportCover from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_02.png";
+import rapportDetail1 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_03.png"
+import rapportDetail2 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_04.png"
+
+
+
+
+<div class="flex gap-12  w-full max-w-4xl flex-col">
+<h1 class="sr-only">Stage à l'agence PICT</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">Immersion au sein de l'Agence 3D PICT</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Après un stage de deux mois, j'ai réalisé ce compte rendu détaillant l'ensemble de mes activités. Ce support physique retrace :
+      <ul class="list-disc ml-6 my-4">
+        <li>La structure de la société et son groupe de travail.</li>
+        <li>Les missions accomplies et les procédures suivies.</li>
+        <li>Les logiciels exploités au quotidien.</li>
+      </ul>
+
+      Le rapport a été produit chez l'imprimeur puis **relié avec un dos carré collé réalisé par mes soins** pour en faciliter la manipulation et la lecture.
+
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Synthèse et retour d'expérience</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      L'enjeu était de concevoir un document à la fois informatif et visuellement pro, reflétant les compétences acquises :
+      <ul class="list-disc ml-6 mb-4">
+        <li>Hiérarchisation d'informations complexes.</li>
+       <li>Description claire des défis rencontrés.</li>
+        <li>Partage des leçons apprises au sein de l’équipe.</li>
+      </ul>
+
+      Il s'agissait de transformer un devoir académique en un véritable objet d'édition.
+
+    </div>
+  </div>
+  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={rapportDetail1} alt="Double page du rapport" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={rapportDetail2} alt="Détail de la mise en page" class="w-full h-full object-cover shadow-lg" />
+    </div>
+  </div>
+</div>
+    <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      Ma démarche a débuté par une phase de **veille éditoriale** pour définir un style visuel cohérent avec l'identité de l'Agence PICT. 
+
+      Le travail de conception s'est structuré ainsi :
+      1. **Architecture de l'information :** Hiérarchisation des données et structuration du sommaire pour une lecture fluide.
+      2. **Design éditorial :** Conception de la mise en page en portant une attention particulière à chaque détail graphique, assurant une clarté maximale pour les projets présentés.
+      3. **Rédaction technique :** Explication détaillée des processus créatifs et des outils utilisés durant ces deux mois d'immersion.
+
+      Le résultat est un ouvrage d'**impression livre** qui documente mon évolution en tant que webdesigner et DA.
+    </div>
+  </div>
+</div>

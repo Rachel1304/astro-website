@@ -1,0 +1,86 @@
+---
+id: specimen-vista
+slug: specimen-vista
+titre: "Spécimen Vista"
+tags: ["Direction artistique", "Typographie"]
+bgColor: "#a2854b"
+foreground: var(--color-white)
+couleurFondBtn: ""
+lieu: ""
+date: "2024-08-15"
+cover1: {
+  src: "../../assets/Projets/SpecimenVista/SpecimenVista_05.png",
+  alt: "Couverture du spécimen typographique Vista"
+}
+cover2: {
+  src: "../../assets/Projets/SpecimenVista/SpecimenVista_02.png",
+  alt: "Mise en page intérieure du spécimen Vista Sans"
+}
+cover3: {
+  src: "../../assets/Projets/SpecimenVista/SpecimenVista_06.png",
+  alt: "Détails typographiques et spécificités de la Vista Slab"
+}
+---
+import { Image } from 'astro:assets';
+import vistaCover from "../../assets/Projets/SpecimenVista/SpecimenVista_05.png";
+import vistaDetail1 from "../../assets/Projets/SpecimenVista/SpecimenVista_02.png"
+import vistaDetail2 from "../../assets/Projets/SpecimenVista/SpecimenVista_06.png"
+
+
+
+<div class="flex gap-12 w-full max-w-4xl flex-col">
+<h1 class="sr-only">Spécimen Vista — Sans & Slab</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">Analyse de l'œuvre de Xavier Dupré</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Dans un cadre pour un exercice de mise en page, j'ai choisi la typographie Vista.
+
+      Ce projet est une exploration approfondie autour de **Vista Sans** et **Vista Slab**, deux polices créées par le typographe français Xavier Dupré. Reconnu internationalement et lauréat du Type Directors Club, Dupré mêle avec brio humanisme, calligraphie et modernité.
+
+      Le spécimen retrace l'histoire de cette famille conçue en 2004 à Sumatra, devenue aujourd'hui une référence incontournable de la création de caractères contemporaine.
+
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Expérimenter la richesse d'une famille</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      L'enjeu de cette édition était de mettre en lumière la dualité de la famille Vista :
+      <ul class="list-disc ml-6 my-4">
+        <li>La **simplicité** et la fluidité d'un sans-serif.</li>
+        <li>La **stabilité** et la structure affirmée d'un slab.</li>
+        <li>L'expressivité des 36 styles permettant un dialogue constant entre fonctionnalité et créativité.</li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={vistaDetail1} alt="Double page du spécimen Vista - Mise en valeur de la famille" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={vistaDetail2} alt="Double page du spécimen Vista - Détail technique typographique" class="w-full h-full object-cover" />
+    </div>
+  </div>
+</div>
+    <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      Plonger dans l'univers de Xavier Dupré a nécessité une approche à la fois technique et sensible de la mise en page.
+
+      1. **Étude Morphologique :** Analyse des courbes et des terminaisons pour comprendre comment l'approche humaniste du designer influe sur la lisibilité en texte courant et l'impact en titrage.
+      2. **Architecture du Spécimen :** Conception d'un chemin de fer permettant d'alterner entre des zones de texte denses (pour tester la fonctionnalité) et des compositions graphiques éclatées (pour explorer l'expressivité).
+      3. **Expérimentation Graphique :** Jeu sur les contrastes entre la sobriété du gris typo et des compositions plus dynamiques, illustrant la polyvalence de la Vista pour des usages contemporains variés.
+
+      Le résultat est un objet éditorial qui célèbre une famille typographique où chaque glyphe raconte une histoire entre Sumatra et New York.
+    </div>
+  </div>
+</div>

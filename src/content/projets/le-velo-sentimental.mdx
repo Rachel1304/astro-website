@@ -1,0 +1,92 @@
+---
+id: le-velo-sentimental
+slug: le-velo-sentimental
+titre: "Le Vélo Sentimental"
+tags: ["Direction artistique","Branding", "Typographie", "Stratégie de marque"]
+bgColor: "#8E481B"
+foreground: "var(--color-white)"
+couleurFondBtn: ""
+lieu: "Canal du Midi, Toulouse"
+date: "2024-06-24"
+cover1: {
+  src: "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_MenuRestaurant.png",
+  alt: "Photo du Menu du restaurant Le Vélo Sentimental"
+}
+cover2: {
+  src: "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_1.png",
+  alt: "Photo du fichier de réparation du Vélo Sentimental"
+}
+cover3: {
+  src: "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_SupportInnovant.png",
+  alt: "Photo du carnet informatif et plan du lieu"
+}
+---
+import { Image } from 'astro:assets';
+import menuRestaurant from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_MenuRestaurant.png";
+import modeEmploi from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_1.png"
+import supportInnovant from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_SupportInnovant.png"
+
+
+<div class="flex gap-12 w-[60vh] flex-col">
+<h1 class="sr-only">Le Vélo Sentimental</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">Projet de fin d’année 2023-2024</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Le Vélo Sentimental est un établissement emblématique situé près du **Canal du Midi**, abritant à la fois un restaurant et un café. 
+
+      Ses activités gravitent autour d'un univers passionné : 
+      <ul class="list-disc ml-6 my-4">
+        <li>La **location** et la **réparation** de vélos.</li>
+        <li>Une cuisine de terroir et de partage.</li>
+        <li>Un lieu d'escale historique pour les cyclistes.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Refonte de l'identité et supports</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Le Vélo Sentimental est un établissement emblématique situé près du **Canal du Midi**, abritant à la fois un restaurant et un café. 
+
+      Ses activités gravitent autour d'un univers passionné : 
+    
+      L’intention était de refondre intégralement la **direction artistique** du lieu. Ce travail s'accompagne d'un explicatif argumenté détaillant chaque étape :
+      <ul class="list-disc ml-6 my-4">
+       <li>Création d’un **logotype** et de ses déclinaisons.</li>
+       <li>Conception des **supports de communication** (menus, kits).</li>
+       <li>Mise en avant des spécificités techniques et culinaires de l'établissement.</li>
+      </ul>
+
+    </div>
+  </div>
+  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={modeEmploi} alt="Détail du mode d'emploi réparation" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={supportInnovant} alt="Plan du lieu et livret de poche" class="w-full h-full object-cover shadow-lg" />
+    </div>
+  </div>
+</div>
+    <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      Le projet a démarré par une clarification du brief et une exploration de l’**histoire du cyclisme**, complétées par des recherches sur le terrain et en bibliothèques. Un planning rigoureux a été établi via un **diagramme de Gantt**.
+      
+      La conception s'est articulée autour de plusieurs livrables clés :
+      1. **Identité Visuelle :** Création d'un moodboard, tests typographiques et élaboration d'une charte graphique justifiée.
+      2. **Édition & Print :** Réalisation d'un menu de restaurant et d'un **kit de réparation** avec mode d’emploi, optimisé techniquement par une attache parisienne pour l'aspect pratique.
+      3. **Expérience Client :** Création d’un **livret de poche** placé à l’entrée pour pallier l’absence de signalétique. Ce support aide les clients à s'approprier l’espace (plan des lieux) et à consulter les horaires.
+      
+      Le résultat final est une identité chaleureuse et fonctionnelle, faisant le pont entre l'art de vivre et la technicité du vélo.
+    </div>
+  </div>
+</div>

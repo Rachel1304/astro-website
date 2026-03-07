@@ -1,0 +1,104 @@
+---
+import { getCollection } from 'astro:content'
+import Arrow from './Arrow.astro'
+
+const projets = await getCollection('projets')
+---
+
+---
+
+<div
+  id="titreGraphiste"
+  class="sticky top-90 flex flex-4 flex-col items-center justify-center transition-all duration-900 ease-in-out origin-top"
+>
+  <p>Web & print</p>
+  <h1 class="font-lora italic text-6xl md:text-8xl">Graphiste</h1>
+</div>
+
+<div class="flex flex-col h-[80vh] w-full items-center justify-center">
+  <div
+    id="accroche"
+    class="absolute bottom-50 flex transition-all duration-500 ease-in-out items-center justify-center w-50 md:w-120"
+  >
+    <h4 class="text-center">
+      « <strong>J’aime</strong> essayer, tester et fabriquer. »
+    </h4>
+  </div>
+  <div class="flex gap-4 fixed bottom-15 z-50">
+    <a
+      href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
+      download="PortfolioNumerique_BASTIE_Rachel.pdf"
+      class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-4 md:px-4 md:py-2"
+      ><strong>Portfolio</strong></a
+    >
+    <a
+      href="/src/pages/contact"
+      target="_self"
+      class="flex items-center justify-center bg-white border-2 rounded-full px-6 py-4 md:px-4 md:py-2"
+      ><strong>Contact</strong></a
+    >
+    <button
+      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="flex items-center justify-center cursor-pointer bg-[var(--color-red)] w-15 md:w-12 border-2 border-[var(--color-white)] rounded-full"
+      aria-label="Remonter en haut"
+    >
+      <div class="-rotate-90">
+        <Arrow
+          foreground="var(--color-white)"
+          size="medium"
+        />
+      </div>
+    </button>
+  </div>
+</div>
+
+<script>
+  //On récupère l'élément
+  const titre = document.getElementById('titreGraphiste')
+  const accroche = document.getElementById('accroche')
+
+  //On éxécute le programme au scroll de mon écran
+  window.addEventListener('scroll', () => {
+    const scrollY = window.scrollY
+    const maxScroll = 400 // La distance de scroll sur laquelle l'animation se fait
+
+    // On calcule un ratio entre 0 et 1
+    // 0 = tout en haut | 1 = animation terminée
+    const ratioAccroche = Math.min(Math.max(scrollY / maxScroll, 0), 1)
+
+    // On soustrait 200 pour que le calcul commence à 0 quand on est à 200px de scroll pr le titre
+    const debutTitre = 200
+    const finTitre = 300
+    const distanceTitre = finTitre - debutTitre
+
+    // Ce ratio reste à 0 tant que scrollY < 200
+    const ratioTitre = Math.min(
+      Math.max((scrollY - debutTitre) / distanceTitre, 0),
+      1,
+    )
+
+    if (titre) {
+      if (scrollY <= 0) {
+        //Retour à la normal (pour être sure que ce soit fait)
+        titre.style.top = '400px'
+        titre.style.transform = 'scale(1)'
+      } else {
+        // Interpolation du TOP: de la position de départ - (la distance à parcourir * ratio)
+        const moveUp = ratioTitre * -250
+        //Interpolation du Scale = taille de l'élément
+        const currentScale = 1 - 0.4 * ratioTitre //0.2 est ce qui sera retiré à l'élément
+
+        titre.style.transform = `translateY(${moveUp}px) scale(${currentScale})`
+        titre.style.transformOrigin = 'top center'
+      }
+    }
+    if (accroche) {
+      //L'accroche disparaît progressivement
+      accroche.style.opacity = (1 - ratioAccroche * 2).toString() //Le 1.5 est la vitesse de disparition
+      //Optionnel: elle descend un peu en disparaissant
+      accroche.style.transform = `translateY(${ratioAccroche * 20}px)`
+      // On désactive les clics quand elle est invisible
+      accroche.style.pointerEvents = ratioAccroche === 1 ? 'none' : 'auto'
+    }
+  })
+</script>

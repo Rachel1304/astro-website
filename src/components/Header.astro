@@ -7,15 +7,16 @@ import LogoOutlook from '../assets/LogoOutlook.png'
 import LogoLinkedin from '../assets/LogoLinkedin.png'
 import LogoInstagram from '../assets/LogoInstagram.png'
 import LogoBehance from '../assets/LogoBehance.png'
+import LogoSecondaireDark from '../components/LogoSecondaireDark.astro'
 
 import Arrow from './Arrow.astro'
-import BtnMenuPC from './BtnMenuPC.astro'
+import BtnMenuPC from '../components/BtnMenuPC.astro'
 ---
 
-<header class="fixed w-full bg-darkblue px-10 py-2 z-8">
+<header class="fixed w-full bg-white px-10 py-2 z-50">
   <nav class="flex w-full justify-between items-center py-2 md:py-0 z-10">
-    <LogoSecondaire class="z-10" />
-    <div class="hidden md:flex items-center text-white font-semibold gap-6">
+    <LogoSecondaireDark class="z-10" />
+    <div class="hidden md:flex items-center text-darkblue font-semibold gap-6">
       <BtnMenuPC
         texte="Projets"
         lien="/projets"
@@ -35,11 +36,11 @@ import BtnMenuPC from './BtnMenuPC.astro'
     >
       <span
         id="ligne1"
-        class="absolute bg-white w-8 h-0.5 transition-all duration-300 -translate-y-1"
+        class="absolute bg-darkblue w-8 h-0.5 transition-all duration-300 -translate-y-1"
       ></span>
       <span
         id="ligne2"
-        class="absolute bg-white w-8 h-0.5 transition-all duration-300 translate-y-1"
+        class="absolute bg-darkblue w-8 h-0.5 transition-all duration-300 translate-y-1"
       ></span>
     </button>
   </nav>

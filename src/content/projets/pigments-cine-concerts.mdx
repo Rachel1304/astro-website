@@ -1,0 +1,105 @@
+---
+id: pigments-cine-concerts
+slug: pigments-cine-concerts
+titre: "Pigments Ciné-concerts"
+tags: ["Direction artistique", "Stratégie de marque"]
+bgColor: "#EF8A77"
+foreground: "#FFFFFF"
+couleurFondBtn: ""
+lieu: ""
+date: "2024-04-29"
+cover1: {
+  src: "../../assets/Projets/PigmentsCineConcerts/Pigments_mockup_Affiches.png",
+  alt: "Photo des affiches Pigments"
+}
+cover2: {
+  src: "../../assets/Projets/PigmentsCineConcerts/Pigments_LogoJustifications.png",
+  alt: "Explication du logotype et des choix réalisés"
+}
+cover3: {
+  src: "../../assets/Projets/PigmentsCineConcerts/Pigments_Affiche_3.png",
+  alt: "Affichage en contexte"
+}
+---
+import { Image } from 'astro:assets';
+import mockupAffiches from "../../assets/Projets/PigmentsCineConcerts/Pigments_mockup_Affiches.png";
+import logoJustifications from "../../assets/Projets/PigmentsCineConcerts/Pigments_LogoJustifications.png"
+import affiche3 from "../../assets/Projets/PigmentsCineConcerts/Pigments_Affiche_3.png"
+import plancheLogo from "../../assets/Projets/PigmentsCineConcerts/Pigments_PlancheLogo.png"
+
+<div class="flex gap-12 w-full max-w-4xl flex-col">
+<h1 class="sr-only">Pigments Ciné-Concerts</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">Mise en couleur sonore du cinéma muet</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      La marque **Pigments ciné-concerts** propose une esthétique singulière portée sur le dynamisme et la modernité sonore. Leur volonté est de mettre en valeur l’étonnante modernité du cinéma muet à travers :
+      <ul class="list-disc ml-6 my-4">
+        <li>Un accompagnement **acoustique** empreint de traditions.</li>
+        <li>Des compositions **électriques** plus contemporaines.</li>
+        <li>Une narration musicale qui redonne vie aux chefs-d'œuvre historiques.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Équilibre entre tradition et modernité</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Conformément à une stratégie de communication élaborée collectivement, ma mission était de créer une **direction artistique contemporaine** pour accroître leur visibilité.
+
+      Les enjeux principaux étaient :
+      <ul class="list-disc ml-6 my-4">
+        <li>Établir une balance visuelle entre l'héritage du muet et l'énergie actuelle.</li>
+        <li>Suggérer des **logos typographiques** forts et identifiables.</li>
+        <li>Réaliser trois déclinaisons d’affiches cohérentes.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="w-full mb-8 overflow-hidden h-auto">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class=" bg-gray-50">
+      <Image src={logoJustifications} alt="Justification du logotype" class="w-full h-full object-cover shadow-lg" />
+    </div>
+  </div>
+</div>
+    <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      En suivant la stratégie établie en collaboration, j’ai conçu un **moodboard annoté** et une planche conceptuelle comprenant des mots-clés illustrant le concept de la Direction Artistique.
+
+      Le développement créatif s'est déroulé en plusieurs phases :
+      1. **Recherche Identitaire :** Après plusieurs tentatives de création du logo, j’ai proposé trois pistes distinctes pour explorer différentes facettes de la marque.
+      2. **Design Final :** Sélection et affinage d'une identité typographique capable de traduire la vibration musicale.
+      3. **Mise en situation :** Création de trois versions d’affiches déclinées, présentées en contexte réel (mockups) pour valider l'impact visuel et la lisibilité en milieu urbain.
+
+      Le résultat final souligne le contraste entre le noir et blanc historique et les "pigments" sonores apportés par les musiciens.
+    </div>
+  </div>
+</div>
+
+<div class="flex flex-wrap w-full mb-8 gap-4 items-start">
+  
+  <div class="flex-1 md:flex-2 min-w-[300px]">
+    <Image 
+      src={plancheLogo} 
+      alt="Logotypes" 
+      class="w-full h-auto object-contain" 
+    />
+  </div>
+  
+  <div class="flex-1 min-w-[300px]">
+    <Image 
+      src={affiche3} 
+      alt="Affiche en situation" 
+      class="w-full h-auto shadow-lg object-contain" 
+    />
+  </div>
+
+
+</div>

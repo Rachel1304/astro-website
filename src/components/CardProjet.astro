@@ -2,88 +2,133 @@
 import { Image } from 'astro:assets'
 import Arrow from '../components/Arrow.astro'
 import type { ImageMetadata } from 'astro'
+import type Tags from './Tags.astro'
+import type { getEntryBySlug } from 'astro:content'
 
 type ImageProjet = {
-    src: ImageMetadata
-    alt: string
-  }
+  src: ImageMetadata
+  alt: string
+}
 
 interface Props {
   titre: string
   tags: string[]
   bgColor: string
   foreground: string
+  couleurFondBtn: string
   slug: string
   lieu: string
   date: string
   cover1: ImageProjet
   cover2: ImageProjet
   cover3: ImageProjet
+  variant?: 'classic' | 'next'
 }
+
+const isNextProject = Astro.props.variant === 'next'
 ---
 
-<section class="flex w-full flex-col px-10 py-20 gap-8" style={{backgroundColor:Astro.props.bgColor}}>
-  <div class="flex w-full gap-4 h-[30vh] md:h-[40vh] lg:h-[60vh]">
-    <div class="flex-2 min-w-0 overflow-hidden">
-      <Image
-        src={Astro.props.cover1.src}
-        alt={Astro.props.cover1.alt}
-        quality='low'
-        class="w-full h-full object-cover"
-      />
-    </div>
-
-    <div class="flex flex-1 flex-col gap-4 min-w-0">
-      <div class="min-h-0 flex-1 overflow-hidden">
+<section
+  class="flex w-full justify-center"
+  style={`background-color: ${Astro.props.bgColor};`}
+>
+  <div class="group flex flex-col px-8 py-10 gap-8 md:max-w-3xl">
+    {
+      isNextProject && (
+        <div class="flex flex-row gap-6 items-center group-hover:translate-x-2 transition-all ease-in-out">
+          <h1 style={`color: ${Astro.props.foreground};`}>Projet suivant</h1>
+          <Arrow
+            foreground={Astro.props.foreground}
+            size="large"
+          />
+        </div>
+      )
+    }
+    <div class="flex w-full gap-4 h-[35vh] md:max-h-[40vh] lg:h-[60vh]">
+      <div class="flex-2 min-w-0 overflow-hidden">
         <Image
-          src={Astro.props.cover2.src}
-          alt={Astro.props.cover2.alt}
-          quality='low'
+          src={Astro.props.cover1.src}
+          alt={Astro.props.cover1.alt}
+          quality="low"
           class="w-full h-full object-cover"
         />
       </div>
-      <div class="min-h-0 flex-1 overflow-hidden">
-        <Image
-          src={Astro.props.cover3.src}
-          alt={Astro.props.cover3.alt}
-          quality='low'
-          class="w-full h-full object-cover"
-        />
+
+      <div class="flex flex-1 flex-col gap-4 min-w-0">
+        <div class="min-h-0 flex-1 overflow-hidden">
+          <Image
+            src={Astro.props.cover2.src}
+            alt={Astro.props.cover2.alt}
+            quality="low"
+            class="w-full h-full object-cover"
+          />
+        </div>
+        <div class="min-h-0 flex-1 overflow-hidden">
+          <Image
+            src={Astro.props.cover3.src}
+            alt={Astro.props.cover3.alt}
+            quality="low"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="flex flex-col gap-4 " style={{color:Astro.props.foreground}}>
     <div
-      class="flex gap-2" 
+      class="flex flex-col gap-4"
+      style={`color: ${Astro.props.foreground};`}
     >
-    <div class="flex flex-col">
-      <h2
-        class="text-3xl font-semibold italic break-words"
-        style="font-family: 'Lora', 'serif';"
-      >
-      {Astro.props.titre}
-      </h2>
-      <p class= text-sm">{Astro.props.lieu}</p>
+      <div class="flex gap-2">
+        <div class="flex flex-col">
+          <h2
+            class="mt-0"
+            style={`color: ${Astro.props.foreground};`}
+          >
+            {Astro.props.titre}
+          </h2>
+          <p
+            class="text-sm"
+            style={`color: ${Astro.props.foreground};`}
+          >
+            {Astro.props.lieu}
+          </p>
+        </div>
+        <a
+          href={`/projets/${Astro.props.slug}`}
+          target="_self"
+          class="shrink-0 h-10 ml-auto flex self-start items-center border-2 rounded-full px-4 overflow-hidden gap-2 hover:translate-x-2 transition-all ease-in-out"
+          style={`color: ${Astro.props.foreground}; border-color: ${Astro.props.foreground}; background-color: ${Astro.props.couleurFondBtn};`}
+        >
+          <p
+            class="text-xs font-medium leading-none mt-1.5"
+            style={`color: ${Astro.props.foreground};`}
+          >
+            See
+          </p>
+          <Arrow
+            foreground={Astro.props.foreground}
+            size="medium"
+          />
+        </a>
       </div>
-      <a
-      href={Astro.props.slug}
-      target="_self"
-      class="shrink-0 ml-auto flex self-start items-center border-2 rounded-full px-2 py-1 overflow-hidden gap-2" 
-      style={{color:Astro.props.foreground, borderColor:Astro.props.foreground}}
-    >
-      <p class="tracking-widest text-xs font-medium">See</p>
-      <Arrow foreground={Astro.props.foreground}/>
-    </a>
-    </div>
-    <div class="flex flex-wrap items-center gap-x-2" >
+      <div class="flex flex-wrap items-center gap-x-1.5">
         {
-          Astro.props.tags.map((t) => (
-            <span class=" uppercase tracking-widest text-xs shrink-0">{t}</span>
-             <span class="w-0.25 h-4" style={{backgroundColor:Astro.props.foreground}}></span> 
+          Astro.props.tags.map((t, index) => (
+            <>
+              {' '}
+              <span class="uppercase tracking-widest text-xs shrink-0">
+                {t}
+              </span>
+              {index < Astro.props.tags.length - 1 && (
+                <span
+                  class="w-0.25 h-4"
+                  style={{ backgroundColor: Astro.props.foreground }}
+                />
+              )}
+            </>
           ))
         }
       </div>
-   
+    </div>
   </div>
 </section>

@@ -1,11 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro'
 import CardProjets from '../components/CardProjets.astro'
+import EffetFixeGraphiste from '../components/EffetFixeGraphiste.astro'
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
+	<EffetFixeGraphiste />
 	<CardProjets />
+	<div class="fixed -bottom-10 right-0 -z-10 pointer-events-none">
+		<img
+			id="deco-svg"
+			src="/deco-fond.svg"
+			alt="Décoration"
+			class="w-45 h-auto opacity-100 transition-opacity duration-1000 ease-out md:w-60 lg:w-80"
+		/>
+	</div>
 </Layout>
+
+<script>
+	//On récupère mon objet
+	const svg = document.getElementById('deco-svg')
+
+	//Evenement au scroll de l'écran
+	window.addEventListener('scroll', () => {
+		if (window.scrollY > 200) {
+			//Si on a scrollé de plus de 50px
+			svg?.classList.remove('opacity-100')
+			svg?.classList.add('opacity-20')
+		} else {
+			//Si on est tout en haut pr permettre le retour de l'opacité si on remonte tout en haut
+			svg?.classList.remove('opacity-20')
+			svg?.classList.add('opacity-100')
+		}
+	})
+</script>

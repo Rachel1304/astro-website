@@ -1,0 +1,166 @@
+---
+id: the-twilight-zone
+slug: the-twilight-zone
+titre: "The Twilight Zone"
+tags: ["Motion design", "Direction artistique"]
+bgColor: "#343436"
+foreground: "var(--color-white)"
+couleurFondBtn: ""
+lieu: ""
+date: "2024-12-21"
+cover1: {
+  src: "../../assets/Projets/TheTwilightZone/Couv_The_Twilight_Zone.png",
+  alt: "Revisite du générique The Twilight Zone"
+}
+cover2: {
+  src: "../../assets/Projets/TheTwilightZone/Plan_TheTwilightZone_08.png",
+  alt: "Détail de la typographie et texture"
+}
+cover3: {
+  src: "../../assets/Projets/TheTwilightZone/Plan_TheTwilightZone_11.png",
+  alt: "Détail de l'animation - Zoom sur un plan"
+}
+---
+import { Image } from 'astro:assets';
+import couvTheTwilightZone from "../../assets/Projets/TheTwilightZone/Couv_The_Twilight_Zone.png";
+import Twilight_details_01 from "../../assets/Projets/TheTwilightZone/Plan_TheTwilightZone_08.png"
+import Twilight_details_02 from "../../assets/Projets/TheTwilightZone/Plan_TheTwilightZone_11.png"
+import videoTheTwilightZone from "../../assets/Projets/TheTwilightZone/Generique-TheTwilightZone.mp4"
+
+
+<div class="flex gap-12 w-full max-w-4xl flex-col">
+<h1 class="sr-only">The Twilight Zone</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">Réinterprétation d'un classique des années 1950-1980</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      
+      L’objectif de ce projet est de revisiter le générique d’une série culte diffusée entre 1950 et 1980. L’intention est de mettre à jour son **style** et son **rythme** tout en conservant sa nature d’origine et son aura mystérieuse.
+
+     Le choix s'est porté sur *The Twilight Zone*, une œuvre pionnière de la science-fiction, pour retravailler son imagerie iconique sous un angle contemporain.
+
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Immersion et dynamisme visuel</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Concevoir une version moderne et dynamique d’un générique iconique, tout en assurant la création d’une **identité visuelle cohérente** et impactante. 
+
+      Le dispositif repose sur plusieurs piliers :
+      <ul class="list-disc ml-6 my-4">
+       <li>**L’animation** et la scénographie pour capturer l'attention.</li>
+       <li>**Les effets sonores** pour renforcer l’immersion.</li>
+       <li>**L'impact visuel** pour un public moderne.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="flex flex-col w-full mb-8 overflow-hidden gap-4">
+  <div class="w-full">
+    <video 
+     autoplay 
+     muted 
+     loop 
+     controls 
+     playsinline 
+     class="w-full h-auto max-h-[70vh] object-contain"
+   >
+     <source src={videoTheTwilightZone} type="video/mp4" />
+     Votre navigateur ne supporte pas la lecture de vidéos.
+      </video>
+    </div>
+  </div>
+  
+   <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      Pour rénover ce générique, j’ai porté une attention particulière à l’**harmonie graphique** en sélectionnant soigneusement les typographies, les couleurs et les transitions fluides après une phase de veille approfondie.
+
+      La démarche créative s'est articulée autour de trois axes :
+      1. **Modernisation sonore :** La bande-son a été revue et modifiée pour apporter une touche actuelle tout en respectant le thème original.
+      
+      2. **Narration visuelle :** L’animation a été élaborée pour souligner l’illusion, en incorporant des formes de portes suggérées, symboles du passage vers l'inconnu.
+      
+      3. **Format hybride :** Le générique a été conçu en format paysage pour permettre une diffusion optimale aussi bien à la télévision qu'au cinéma.
+
+      Le résultat final propose un voyage entre **nostalgie** et **modernité**, ancré dans une esthétique de l'étrange.
+    </div>
+  </div>
+  
+</div>
+
+
+
+
+
+
+{/* 
+<div class="w-full mb-8 shadow-xl bg-black">
+  <video 
+    autoplay 
+    muted 
+    loop 
+    controls 
+    playsinline 
+    class="w-full h-auto max-h-[70vh] object-contain"
+  >
+    <source src={videoTheTwilightZone} type="video/mp4" />
+    Votre navigateur ne supporte pas la lecture de vidéos.
+  </video>
+</div>
+<h1>The Twilight Zone</h1>
+
+<div class="flex gap-12 flex-col md:flex-row">
+<div class="flex flex-1 flex-col">
+## Contexte
+<p class="subtitle-da">Réinterprétation d'un classique des années 1950-1980</p>
+
+L’objectif de ce projet est de revisiter le générique d’une série culte diffusée entre 1950 et 1980. L’intention est de mettre à jour son **style** et son **rythme** tout en conservant sa nature d’origine et son aura mystérieuse.
+
+Le choix s'est porté sur *The Twilight Zone*, une œuvre pionnière de la science-fiction, pour retravailler son imagerie iconique sous un angle contemporain.
+
+</div>
+<div class="flex flex-1 flex-col">
+## Objectif
+<p class="subtitle-da">Immersion et dynamisme visuel</p>
+
+Concevoir une version moderne et dynamique d’un générique iconique, tout en assurant la création d’une **identité visuelle cohérente** et impactante. 
+
+Le dispositif repose sur plusieurs piliers :
+<ul class="list-disc ml-6 my-4">
+  <li>**L’animation** et la scénographie pour capturer l'attention.</li>
+  <li>**Les effets sonores** pour renforcer l’immersion.</li>
+  <li>**L'impact visuel** pour un public moderne.</li>
+</ul>
+
+</div>
+</div>
+
+<div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={Twilight_details_01} alt="Détail de la typographie et texture" class="w-full h-full object-cover" />
+    </div>
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={Twilight_details_02} alt="Détail de l'animation - Zoom sur un plan" class="w-full h-full object-cover" />
+    </div>
+  </div>
+</div>
+
+## Mon procédé
+Pour rénover ce générique, j’ai porté une attention particulière à l’**harmonie graphique** en sélectionnant soigneusement les typographies, les couleurs et les transitions fluides après une phase de veille approfondie.
+
+La démarche créative s'est articulée autour de trois axes :
+1. **Modernisation sonore :** La bande-son a été revue et modifiée pour apporter une touche actuelle tout en respectant le thème original.
+
+
+2. **Narration visuelle :** L’animation a été élaborée pour souligner l’illusion, en incorporant des formes de portes suggérées, symboles du passage vers l'inconnu.
+3. **Format hybride :** Le générique a été conçu en format paysage pour permettre une diffusion optimale aussi bien à la télévision qu'au cinéma.
+
+Le résultat final propose un voyage entre **nostalgie** et **modernité**, ancré dans une esthétique de l'étrange. */}

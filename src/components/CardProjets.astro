@@ -1,326 +1,52 @@
 ---
 import { getCollection } from 'astro:content'
 import CardProjet from '../components/CardProjet.astro'
-
-// import Larach_RapportDeStage_Mockup01 from '../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Mockup01.png'
-// import Larach_RapportDeStage_Mockup02 from '../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Mockup02.png'
-// import Larach_RapportDeStage_Mockup03 from '../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Mockup03.png'
-
-// import CapCathare_Affiche from '../assets/Projets/CapCathare/CapCathare_Affiche.png'
-// import CapCathare_Brochure from '../assets/Projets/CapCathare/CapCathare_Brochure.png'
-// import CapCathare_Application from '../assets/Projets/CapCathare/CapCathare_Application.png'
-
-// import Mockup_Specimen_Cathare from '../assets/Projets/SpecimenCathare/Mockup_Specimen_Cathare.png'
-// import Mockup_Specimen_01 from '../assets/Projets/SpecimenCathare/Mockup_Specimen_01.png'
-// import Mockup_Specimen_02 from '../assets/Projets/SpecimenCathare/Mockup_Specimen_02.png'
-
-// import Mockup_Triathlon from '../assets/Projets/AfficheTriathlon/Mockup_Triathlon.png'
-// import AfficheTriathlon_details_01 from '../assets/Projets/AfficheTriathlon/AfficheTriathlon_details_01.png'
-// import AfficheTriathlon_details_02 from '../assets/Projets/AfficheTriathlon/AfficheTriathlon_details_02.png'
-
-// import SpecimenVista_05 from '../assets/Projets/SpecimenVista/SpecimenVista_05.png'
-// import SpecimenVista_02 from '../assets/Projets/SpecimenVista/SpecimenVista_02.png'
-// import SpecimenVista_06 from '../assets/Projets/SpecimenVista/SpecimenVista_06.png'
-
-// import MagazinTodaysPoints_mockup_couverture from '../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_couverture.png'
-// import MagazinTodaysPoints_mockup_01 from '../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_01.png'
-// import MagazinTodaysPoints_mockup_02 from '../assets/Projets/MagazineTodaysPoint/MagazinTodaysPoints_mockup_02.png'
-
-// import LeVeloSentimental_MenuRestaurant from '../assets/Projets/LeVeloSentimental/LeVeloSentimental_MenuRestaurant.png'
-// import LeVeloSentimental_ModeEmploi_1 from '../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_1.png'
-// import LeVeloSentimental_SupportInnovant from '../assets/Projets/LeVeloSentimental/LeVeloSentimental_SupportInnovant.png'
-
-// import Pigments_mockup_Affiches from '../assets/Projets/PigmentsCineConcerts/Pigments_mockup_Affiches.png'
-// import Pigments_LogoJustifications from '../assets/Projets/PigmentsCineConcerts/Pigments_LogoJustifications.png'
-// import Pigments_Affiche_3 from '../assets/Projets/PigmentsCineConcerts/Pigments_Affiche_3.png'
-
-// import PICT_RapportDeStage_02 from '../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_02.png'
-// import PICT_RapportDeStage_03 from '../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_03.png'
-// import PICT_RapportDeStage_04 from '../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_04.png'
-
-// import BoisDeNagoya_mockUp from '../assets/Projets/BoisdeNagoya/BoisDeNagoya_mockUp.png'
-// import BoisDeNagoya_01 from '../assets/Projets/BoisdeNagoya/BoisDeNagoya_01.png'
-// import BoisDeNagoya_02 from '../assets/Projets/BoisdeNagoya/BoisDeNagoya_02.png'
-
-// import Mockup_TheTwilightZone from '../assets/Projets/MotionTwilightZone/Mockup_TheTwilightZone.png'
-// import Plan_TheTwilightZone_08 from '../assets/Projets/MotionTwilightZone/Plan_TheTwilightZone_08.png'
-// import Plan_TheTwilightZone_11 from '../assets/Projets/MotionTwilightZone/Plan_TheTwilightZone_11.png'
+import { ordreProjets } from '../ordre-projets'
 
 const projets = await getCollection('projets')
+
+// 1. TRI (On crée une copie pour ne pas muter l'original)
+const triProjets = [...projets].sort((a, b) => {
+  const indexA = ordreProjets.indexOf(a.id)
+  const indexB = ordreProjets.indexOf(b.id)
+  const posA = indexA === -1 ? 999 : indexA
+  const posB = indexB === -1 ? 999 : indexB
+  return posA - posB
+})
 ---
 
-<div class="flex flex-col gap-10">
+<div class="flex flex-col gap-20 mt-8 pb-[15vh]">
   {
-    projets.map((projet) => (
-      <CardProjet
-        titre={projet.data.titre}
-        tags={projet.data.tags}
-        bgColor={projet.data.bgColor}
-        foreground={projet.data.foreground}
-        slug={projet.data.slug}
-        date={projet.data.date}
-        lieu={projet.data.lieu}
-        cover1={{ src: projet.data.cover1.src, alt: projet.data.cover1.alt }}
-        cover2={{ src: projet.data.cover2.src, alt: projet.data.cover2.alt }}
-        cover3={{ src: projet.data.cover3.src, alt: projet.data.cover3.alt }}
-      />
-    ))
+    triProjets.map((projet, i) => {
+      // 2. LOGIQUE DE COULEUR FORCÉE
+      const isWhiteCard = i % 2 === 0
+      const finalBgColor = isWhiteCard
+        ? 'var(--color-white)'
+        : projet.data.bgColor
+      const finalForeground = isWhiteCard
+        ? 'var(--color-black)'
+        : 'var(--color-white)'
+
+      return (
+        <div
+          class="sticky top-[20vh] w-full"
+          style={`z-index: ${i + 10};`}
+        >
+          <CardProjet
+            titre={projet.data.titre}
+            tags={projet.data.tags}
+            couleurFondBtn={finalBgColor}
+            date={projet.data.date}
+            lieu={projet.data.lieu}
+            cover1={projet.data.cover1}
+            cover2={projet.data.cover2}
+            cover3={projet.data.cover3}
+            bgColor={finalBgColor}
+            foreground={finalForeground}
+            slug={projet.id}
+          />
+        </div>
+      )
+    })
   }
-  <!-- <CardProjet
-    title="Rapport de stage chez La Maison Larac"
-    tags={['Direction Artistique', 'Identité Visuelle']}
-    bgColor="#d09b5e"
-    foreground="var(--color-white)"
-    href="#"
-    lieu="Entreprise Des Pains & Des Pains"
-    images={[
-      {
-        src: Larach_RapportDeStage_Mockup01,
-        alt: 'Photo du rapport de stage et de sa couverture',
-      },
-      {
-        src: Larach_RapportDeStage_Mockup02,
-        alt: 'Photo du rapport de stage',
-      },
-      {
-        src: Larach_RapportDeStage_Mockup03,
-        alt: 'Photo du rapport de stage',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Cap Cathare"
-    tags={[
-      'Direction Artistique',
-      'Identité Visuelle',
-      'Branding',
-      'Stratégie de  marque',
-    ]}
-    bgColor="var(--color-white)"
-    foreground="var(--color-black)"
-    href="/src/pages/projet-cap-cathare.astro"
-    lieu=""
-    images={[
-      {
-        src: CapCathare_Affiche,
-        alt: 'Affiche du projet Cap Cathare',
-      },
-      {
-        src: CapCathare_Brochure,
-        alt: 'Brochure du projet Cap Cathare',
-      },
-      {
-        src: CapCathare_Application,
-        alt: 'Application du projet Cap Cathare',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Spécimen Cathare"
-    tags={['Direction Artistique', 'Typographie']}
-    bgColor="#5a96d0"
-    foreground="var(--color-white)"
-    href="#"
-    lieu=""
-    images={[
-      {
-        src: Mockup_Specimen_Cathare,
-        alt: 'Photo du spécimen typographique Cathare',
-      },
-      {
-        src: Mockup_Specimen_01,
-        alt: 'Deuxième photo du spécimen typographique Cathare',
-      },
-      {
-        src: Mockup_Specimen_02,
-        alt: 'Troisième photo du spécimen typographique Cathare',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Affiche Triathlon"
-    tags={['Direction Artistique', 'Branding']}
-    bgColor="var(--color-white)"
-    foreground="var(--color-black)"
-    href="#"
-    lieu="Triathlon TUC Toulouse"
-    images={[
-      {
-        src: Mockup_Triathlon,
-        alt: 'Affiche du Triathlon',
-      },
-      {
-        src: AfficheTriathlon_details_01,
-        alt: 'Zoom sur le projet du Triathlon',
-      },
-      {
-        src: AfficheTriathlon_details_02,
-        alt: 'Zoom sur le projet du Triathlon',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Spécimen Vista"
-    tags={['Direction Artistique', 'Typographie']}
-    bgColor="#a2854b"
-    foreground="var(--color-white)"
-    href="#"
-    lieu=""
-    images={[
-      {
-        src: SpecimenVista_05,
-        alt: 'Photo du projet Spécimen Vista',
-      },
-      {
-        src: SpecimenVista_02,
-        alt: 'Photo du projet Spécimen Vista',
-      },
-      {
-        src: SpecimenVista_06,
-        alt: 'Photo du projet Spécimen Vista',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Magazine Today's Point"
-    tags={['Direction Artistique', 'Stratégie de marque']}
-    bgColor="var(--color-white)"
-    foreground="var(--color-black)"
-    href="#"
-    lieu=""
-    images={[
-      {
-        src: MagazinTodaysPoints_mockup_couverture,
-        alt: 'Photo de la couverture du magazine',
-      },
-      {
-        src: MagazinTodaysPoints_mockup_01,
-        alt: 'Photo des pages du magazine',
-      },
-      {
-        src: MagazinTodaysPoints_mockup_02,
-        alt: 'Photo des pages du magazine',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Le Vélo Sentimental"
-    tags={['Direction Artistique', 'Typographie', 'Plateforme de marque']}
-    bgColor="#8E481B"
-    foreground="var(--color-white)"
-    href="#"
-    lieu=""
-    images={[
-      {
-        src: LeVeloSentimental_MenuRestaurant,
-        alt: 'Photo du Menu du restaurant',
-      },
-      {
-        src: LeVeloSentimental_ModeEmploi_1,
-        alt: 'Photo du fichier de réparation du Vélo Sentimental',
-      },
-      {
-        src: LeVeloSentimental_SupportInnovant,
-        alt: 'Photo du carnet informatif et plan du lieu',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Pigments Ciné-Concerts"
-    tags={['Direction Artistique', 'Stratégie de marque']}
-    bgColor="var(--color-white)"
-    foreground="var(--color-black)"
-    href="#"
-    lieu=""
-    images={[
-      {
-        src: Pigments_mockup_Affiches,
-        alt: 'Photo des affiches',
-      },
-      {
-        src: Pigments_LogoJustifications,
-        alt: 'Explication du logotype et des choix réalisés',
-      },
-      {
-        src: Pigments_Affiche_3,
-        alt: 'Affichage',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Rapport de stage"
-    tags={['Direction Artistique', 'Webdesign']}
-    bgColor="#39737a"
-    foreground="var(--color-white)"
-    href="#"
-    lieu="Entreprise Agence PICT"
-    images={[
-      {
-        src: PICT_RapportDeStage_02,
-        alt: 'Photo double page du raaport de stage',
-      },
-      {
-        src: PICT_RapportDeStage_03,
-        alt: 'Photo double page du raaport de stage',
-      },
-      {
-        src: PICT_RapportDeStage_04,
-        alt: 'Photo double page du raaport de stage',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Bois de Nagoya"
-    tags={['Direction Artistique', 'Webdesign', 'Landing page']}
-    bgColor="var(--color-white)"
-    foreground="var(--color-black)"
-    href="#"
-    lieu="Entreprise Agence PICT"
-    images={[
-      {
-        src: BoisDeNagoya_mockUp,
-        alt: 'Photo du site Bois de Nagoya',
-      },
-      {
-        src: BoisDeNagoya_01,
-        alt: 'Photo de la landing page Bois de Nagoya',
-      },
-      {
-        src: BoisDeNagoya_02,
-        alt: 'Photo de la landing page Bois de Nagoya',
-      },
-    ]}
-  />
-
-  <CardProjet
-    title="Twilight Zone"
-    tags={['Direction Artistique', 'Motion design']}
-    bgColor="#343436"
-    foreground="var(--color-white)"
-    href="#"
-    lieu=""
-    images={[
-      {
-        src: Mockup_TheTwilightZone,
-        alt: 'Affiche du projet Cap Cathare',
-      },
-      {
-        src: Plan_TheTwilightZone_08,
-        alt: 'Brochure du projet Cap Cathare',
-      },
-      {
-        src: Plan_TheTwilightZone_11,
-        alt: 'Application du projet Cap Cathare',
-      },
-    ]}
-  /> -->
 </div>

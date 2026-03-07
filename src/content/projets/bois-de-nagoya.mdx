@@ -1,0 +1,143 @@
+---
+id: bois-de-nagoya
+slug: bois-de-nagoya
+titre: "Bois de Nagoya"
+tags: ["Direction artistique", "Webdesign", "Landing page", "Identité Visuelle"]
+bgColor: "#135416"
+foreground: "var(--color-white)"
+couleurFondBtn: ""
+lieu: "Agence PICT"
+date: "2024-05-15"
+cover1: {
+  src: "../../assets/Projets/BoisdeNagoya/BoisDeNagoya_mockUp.png",
+  alt: "Présentation du site Bois de Nagoya"
+}
+cover2: {
+  src: "../../assets/Projets/BoisdeNagoya/BoisDeNagoya_01.png",
+  alt: "Landing page Bois de Nagoya - Section haute"
+}
+cover3: {
+  src: "../../assets/Projets/BoisdeNagoya/BoisDeNagoya_02.png",
+  alt: "Landing page Bois de Nagoya - Détails"
+}
+---
+import { Image } from 'astro:assets';
+import mockupNagoya from "../../assets/Projets/BoisdeNagoya/BoisDeNagoya_mockUp.png";
+import nagoyaDetail1 from "../../assets/Projets/BoisdeNagoya/BoisDeNagoya_01.png"
+import nagoyaDetail2 from "../../assets/Projets/BoisdeNagoya/BoisDeNagoya_02.png"
+
+
+
+<div class="flex gap-12 w-full max-w-4xl flex-col">
+<h1 class="sr-only">Bois de Nagoya</h1>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">Proposition pour une résidence de Promomidi</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      Ce projet, initié par l'**Agence PICT** pour le promoteur **Promomidi**, m'a été confié comme exercice d'application durant mon stage. L'enjeu était de s'approprier un dossier réel pour concevoir l'identité d'une nouvelle résidence immobilière.
+
+    </div>
+  </div>
+  <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Objectif</h2>
+      <p class="subtitle-da">Immersion et mise en valeur visuelle</p>
+    </div>
+    <div class="flex flex-col flex-3">
+      En partant du nom « **Bois de Nagoya** », ma mission consistait à :
+      <ul class="list-disc ml-6">
+        <li>Réaliser une **identité visuelle** cohérente avec le standing de la résidence.</li>
+        <li>Concevoir une **maquette de landing page** optimisée sur Adobe XD.</li>
+        <li>Mettre en valeur les visuels haute définition pour séduire les futurs acquéreurs.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={nagoyaDetail1} alt="Maquette landing page partie 1" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
+      <Image src={nagoyaDetail2} alt="Maquette landing page partie 2" class="w-full h-full object-cover shadow-lg" />
+    </div>
+  </div>
+</div>
+    <div class="flex flex-col md:flex-row gap-6">
+    <div class="flex flex-col md:w-56 shrink-0 flex-2">
+      <h2 class="mt-0">Procédé</h2>
+    </div>
+    <div class="flex flex-col flex-3">
+      Sous la direction de ma tutrice Céline Teulières, j'ai suivi une méthodologie rigoureuse pour structurer les informations hiérarchiques de la page.
+
+      Ma démarche créative s'est découpée en trois temps :
+      1. **Analyse & Benchmarking :** Observation de la concurrence immobilière pour définir un positionnement différenciant.
+      2. **Identité Express :** Création d'un logotype efficace, conçu pour s'intégrer harmonieusement à l'interface web sans surcharger le design.
+      3. **Webdesign & UI :** Travail approfondi sur la palette de couleurs, la typographie et le rythme de la landing page pour assurer un message clair et une navigation fluide.
+      
+      Le résultat final privilégie de **grands formats d'images**, offrant une présentation immersive et élégante aux clients de l'agence.
+    </div>
+  </div>
+</div>
+
+
+
+
+
+{/* 
+<div class="w-full h-[40vh] mb-8 overflow-hidden">
+ <Image src={mockupNagoya} alt="Interface web Bois de Nagoya" class="w-full h-full object-cover" />
+</div>
+<h1>Bois de Nagoya</h1>
+
+<div class="flex gap-12 flex-col md:flex-row">
+<div class="flex flex-1 flex-col">
+## Contexte
+<p class="subtitle-da">Exercice d'agence pour Promomidi</p>
+
+Ce projet, initié par l'**Agence PICT** pour le promoteur **Promomidi**, m'a été confié comme exercice d'application durant mon stage. L'enjeu était de s'approprier un dossier réel pour concevoir l'identité d'une nouvelle résidence immobilière.
+
+</div>
+<div class="flex flex-1 flex-col">
+## Objectif
+<p class="subtitle-da">Immersion et mise en valeur visuelle</p>
+
+En partant du nom « **Bois de Nagoya** », ma mission consistait à :
+<ul class="list-disc ml-6 my-4">
+  <li>Réaliser une **identité visuelle** cohérente avec le standing de la résidence.</li>
+  <li>Concevoir une **maquette de landing page** optimisée sur Adobe XD.</li>
+  <li>Mettre en valeur les visuels haute définition pour séduire les futurs acquéreurs.</li>
+</ul>
+
+</div>
+</div>
+
+<div class="w-full mb-8 h-auto">
+  <div class="flex flex-col md:flex-row gap-4 items-start">
+    <div class="w-full md:w-1/2">
+      <Image 
+        src={nagoyaDetail1} 
+        alt="Maquette landing page partie 1" 
+        class="w-full h-auto object-contain shadow-lg" 
+      />
+    </div>
+    <div class="w-full md:w-1/2">
+      <Image 
+        src={nagoyaDetail2} 
+        alt="Maquette landing page partie 2" 
+        class="w-full h-auto object-contain shadow-lg" 
+      />
+    </div>
+  </div>
+</div>
+
+## Mon procédé
+Sous la direction de ma tutrice Céline Teulières, j'ai suivi une méthodologie rigoureuse pour structurer les informations hiérarchiques de la page.
+
+Ma démarche créative s'est découpée en trois temps :
+1. **Analyse & Benchmarking :** Observation de la concurrence immobilière pour définir un positionnement différenciant.
+2. **Identité Express :** Création d'un logotype efficace, conçu pour s'intégrer harmonieusement à l'interface web sans surcharger le design.
+3. **Webdesign & UI :** Travail approfondi sur la palette de couleurs, la typographie et le rythme de la landing page pour assurer un message clair et une navigation fluide.
+
+Le résultat final privilégie de **grands formats d'images**, offrant une présentation immersive et élégante aux clients de l'agence. */}

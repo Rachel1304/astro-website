@@ -14,12 +14,16 @@ interface Props {
 <a
   href={Astro.props.href}
   target="_blank"
-  class="flex gap-4 items-center self-end"
+  class="group flex gap-4 items-center self-end md:justify-center transition-transform duration-300 hover:scale-105"
 >
-  <p class="flex text-white text-sm text-semibold">{Astro.props.texte}</p>
+  <p
+    class="flex text-[var(--color-white)] text-sm mt-1.5 text-semibold transition-colors duration-300 group-hover:text-blue"
+  >
+    {Astro.props.texte}
+  </p>
   <Image
     src={Astro.props.src}
     alt={Astro.props.alt}
-    class="w-8 h-8 transition-transform duration-300 hover:scale-120"
+    class="w-8 h-8"
   />
 </a>
