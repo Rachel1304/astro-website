@@ -6,13 +6,18 @@ const projets = await getCollection('projets')
 ---
 
 ---
-
 <div
-  id="titreGraphiste"
-  class="sticky top-90 flex flex-4 flex-col items-center justify-center transition-all duration-900 ease-in-out origin-top"
+  class="h-[90vh] w-full flex items-center justify-center sticky top-0 -z-10 pb-20 md:pb-30"
 >
-  <p>Web & print</p>
-  <h1 class="font-lora italic text-6xl md:text-8xl">Graphiste</h1>
+  <div
+    id="titreGraphiste"
+    class="flex flex-col items-center justify-center transition-all duration-700 ease-out"
+  >
+    <p class="text-sm md:text-base mb-2">Web & print</p>
+    <h1 class="font-lora italic text-6xl md:text-8xl leading-none">
+      Graphiste
+    </h1>
+  </div>
 </div>
 
 <div class="flex flex-col h-[80vh] w-full items-center justify-center">
@@ -24,22 +29,22 @@ const projets = await getCollection('projets')
       « <strong>J’aime</strong> essayer, tester et fabriquer. »
     </h4>
   </div>
-  <div class="flex gap-4 fixed bottom-15 z-50">
+  <div class="flex gap-4 fixed bottom-15 z-29">
     <a
       href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
       download="PortfolioNumerique_BASTIE_Rachel.pdf"
-      class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-4 md:px-4 md:py-2"
+      class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
       ><strong>Portfolio</strong></a
     >
-    <a
+    <!-- <a
       href="/src/pages/contact"
       target="_self"
-      class="flex items-center justify-center bg-white border-2 rounded-full px-6 py-4 md:px-4 md:py-2"
+      class="flex items-center justify-center bg-white border-2 rounded-full px-6 py-2 md:px-4 md:py-2"
       ><strong>Contact</strong></a
-    >
+    > -->
     <button
       onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="flex items-center justify-center cursor-pointer bg-[var(--color-red)] w-15 md:w-12 border-2 border-[var(--color-white)] rounded-full"
+      class="flex items-center justify-center cursor-pointer bg-[var(--color-red)] w-12 md:w-12 border-2 border-[var(--color-white)] rounded-full"
       aria-label="Remonter en haut"
     >
       <div class="-rotate-90">
@@ -60,31 +65,25 @@ const projets = await getCollection('projets')
   //On éxécute le programme au scroll de mon écran
   window.addEventListener('scroll', () => {
     const scrollY = window.scrollY
+    const isMobile = window.innerWidth < 700
     const maxScroll = 400 // La distance de scroll sur laquelle l'animation se fait
 
     // On calcule un ratio entre 0 et 1
     // 0 = tout en haut | 1 = animation terminée
-    const ratioAccroche = Math.min(Math.max(scrollY / maxScroll, 0), 1)
-
-    // On soustrait 200 pour que le calcul commence à 0 quand on est à 200px de scroll pr le titre
-    const debutTitre = 200
-    const finTitre = 300
-    const distanceTitre = finTitre - debutTitre
+    const ratioAccroche = Math.min(Math.max(scrollY / 500, 0), 1)
 
     // Ce ratio reste à 0 tant que scrollY < 200
-    const ratioTitre = Math.min(
-      Math.max((scrollY - debutTitre) / distanceTitre, 0),
-      1,
-    )
+    // Si tu as mis pb-20 (80px), on réduit moveUp d'autant.
+    const ratioTitre = Math.min(Math.max(scrollY / 400, 0), 1)
 
     if (titre) {
       if (scrollY <= 0) {
         //Retour à la normal (pour être sure que ce soit fait)
-        titre.style.top = '400px'
-        titre.style.transform = 'scale(1)'
+        const moveUp = ratioTitre * (isMobile ? -200 : -180)
+        const scale = 1 - 0.35 * ratioTitre
       } else {
         // Interpolation du TOP: de la position de départ - (la distance à parcourir * ratio)
-        const moveUp = ratioTitre * -250
+        const moveUp = ratioTitre * (isMobile ? -200 : -180)
         //Interpolation du Scale = taille de l'élément
         const currentScale = 1 - 0.4 * ratioTitre //0.2 est ce qui sera retiré à l'élément
 

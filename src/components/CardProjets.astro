@@ -15,7 +15,7 @@ const triProjets = [...projets].sort((a, b) => {
 })
 ---
 
-<div class="flex flex-col gap-20 mt-8 pb-[15vh]">
+<div class="flex flex-col gap-40 mt-8">
   {
     triProjets.map((projet, i) => {
       // 2. LOGIQUE DE COULEUR FORCÉE
@@ -30,7 +30,7 @@ const triProjets = [...projets].sort((a, b) => {
       return (
         <div
           class="sticky top-[20vh] w-full"
-          style={`z-index: ${i + 10};`}
+          style={`z-index: ${i + 1};`}
         >
           <CardProjet
             titre={projet.data.titre}

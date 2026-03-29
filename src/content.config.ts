@@ -13,6 +13,7 @@ const projets = defineCollection({
   schema: ({ image }) => z.object({
       id: z.string(),
       slug: z.string(),
+      selection: z.boolean().optional(),
       titre: z.string(),
       tags: z.array(z.enum(["Webdesign", "HTML", "CSS", "JavaScript", "Direction artistique", "Branding", "Motion design", "Identité Visuelle", "Typographie", "Landing page", "Stratégie de marque"])),
       bgColor: z.string(),

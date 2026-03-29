@@ -13,16 +13,16 @@
 
 @layer base {
   h1{
-    @apply text-5xl font-bold text-darkblue;
+    @apply text-4xl font-lora font-bold italic break-words text-darkblue;
   }
   h2{
-    @apply text-3xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-4xl;}
+    @apply text-4xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-3xl;}
   }
   h3{
     @apply text-xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
   }
   h4{
-    @apply text-xl font-lora text-darkblue mb-0 mt-0 break-words;
+    @apply text-lg md:text-xl font-lora text-darkblue mb-5 mt-0 break-words;
   }
 
 
@@ -38,6 +38,7 @@ a {
   h3 + p {
     @apply mt-0;
   }
+ 
 
   .subtitle-da {
   font-weight: 600;
@@ -72,6 +73,7 @@ li {
     margin: 0;
     background-color: var(--color-white);
     color: var(--color-darkblue);
+    
   }
 
 body {

@@ -2,21 +2,124 @@
 import Layout from '../layouts/Layout.astro'
 import CardProjets from '../components/CardProjets.astro'
 import EffetFixeGraphiste from '../components/EffetFixeGraphiste.astro'
+import SceauCire from '../assets/SceauCirePenséeSauvage-FondTransparent.png'
+import PhotoRachel from '../assets/Photo_RachelBastie_2025.png'
+import BtnArrow from '../components/BtnArrow.astro'
+import { getCollection } from 'astro:content'
+import CardProjet from '../components/CardProjet.astro'
+import { ordreProjets } from '../ordre-projets'
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const projets = await getCollection('projets')
+
+import { Image } from 'astro:assets'
+
+// Filtre et tri
+const triProjets = projets
+	.filter((p) => p.data.selection === true) // On ne garde que les "True"
+	.sort((a, b) => {
+		const posA = ordreProjets.indexOf(a.id)
+		const posB = ordreProjets.indexOf(b.id)
+		return (posA === -1 ? 999 : posA) - (posB === -1 ? 999 : posB)
+	})
 ---
 
 <Layout>
 	<EffetFixeGraphiste />
-	<CardProjets />
+	<div class="flex flex-col gap-20 mt-8">
+		{
+			triProjets.map((projet, i) => {
+				// 2. LOGIQUE DE COULEUR FORCÉE
+				const isWhiteCard = i % 2 === 0
+				const finalBgColor = isWhiteCard
+					? 'var(--color-white)'
+					: projet.data.bgColor
+				const finalForeground = isWhiteCard
+					? 'var(--color-black)'
+					: 'var(--color-white)'
+
+				return (
+					<div
+						class="sticky top-[20vh] w-full"
+						style={`z-index: ${i + 1};`}
+					>
+						<CardProjet
+							titre={projet.data.titre}
+							tags={projet.data.tags}
+							couleurFondBtn={finalBgColor}
+							date={projet.data.date}
+							lieu={projet.data.lieu}
+							cover1={projet.data.cover1}
+							cover2={projet.data.cover2}
+							cover3={projet.data.cover3}
+							bgColor={finalBgColor}
+							foreground={finalForeground}
+							slug={projet.id}
+						/>
+					</div>
+				)
+			})
+		}
+	</div>
 	<div class="fixed -bottom-10 right-0 -z-10 pointer-events-none">
 		<img
 			id="deco-svg"
 			src="/deco-fond.svg"
 			alt="Décoration"
+			loading="eager"
+			decoding="async"
 			class="w-45 h-auto opacity-100 transition-opacity duration-1000 ease-out md:w-60 lg:w-80"
 		/>
+	</div>
+
+	<div class="w-full bg-white py-[10vh]">
+		<div
+			class="flex flex-col md:flex-row md:max-w-6xl mx-auto gap-6 px-10 md:gap-12 items-center justify-center"
+		>
+			<div class="relative">
+				<Image
+					src={PhotoRachel}
+					alt="Photo protrait de Rachel Bastié"
+					class="h-[30vh] md:h-[40vh] w-auto object-cover"
+					>Rachel Bastié
+				</Image>
+				<div
+					class="absolute -bottom-20 z-0 -right-10 w-32 md:w-40 rotate-[-15deg] pointer-events-none"
+				>
+					<Image
+						src={SceauCire}
+						alt="Tampon de pensée sauvage symbolisant la réflexion profonde et la recherche"
+						class="w-full h-auto"
+					/>
+				</div>
+			</div>
+			<div class="flex flex-col gap-4 max-w-2xl">
+				<div>
+					<h2>Rachel Bastié</h2>
+					<h3>Designer Graphique & Webdesigner | L’art du design réfléchi</h3>
+				</div>
+
+				<h4>La Rigueur au service de l'Émotion</h4>
+				<p class="max-w-prose">
+					Ma démarche repose sur un cycle exigeant : <strong
+						>rechercher, dessiner, tester et justifier</strong
+					>. Chaque choix graphique est une réponse stratégique à la vision
+					d'une marque. Ma curiosité pour la technique m'a conduite au code
+					(Astro/CSS) avec un objectif précis : maîtriser l'intégralité de la
+					chaîne de production pour garantir une cohérence absolue entre la
+					promesse créative initiale et sa réalité numérique.
+				</p>
+				<div class="flex flex-row gap-6 justify-start md:justify-end flex-wrap">
+					<BtnArrow
+						texte="Mon parcours"
+						lien="/a-propos"
+					/>
+					<BtnArrow
+						texte="Me contacter"
+						lien="/contact"
+					/>
+				</div>
+			</div>
+		</div>
 	</div>
 </Layout>
 

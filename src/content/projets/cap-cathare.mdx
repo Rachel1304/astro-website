@@ -1,6 +1,7 @@
 ---
 id: cap-cathare
 slug: cap-cathare
+selection: true
 titre: "Cap Cathare"
 tags: ["Direction artistique", "Branding", "Identité Visuelle", "Stratégie de marque"]
 bgColor: "#EFD84B"
@@ -25,14 +26,25 @@ import { Image } from 'astro:assets';
 import logotypeCapCathare from "../../assets/Projets/CapCathare/CapCathare_logo.svg"
 import BrochureCapCathare from "../../assets/Projets/CapCathare/CapCathare_Brochure.png"
 import ApplicationCapCathare from "../../assets/Projets/CapCathare/CapCathare_Application.png"
+import LivretCouverture from "../../assets/Projets/CapCathare/CapCathare_Livret_01.png"
+import PostReseauxSociaux from "../../assets/Projets/CapCathare/CapCathare_post&story.png"
+import CarnetCroquis from "../../assets/Projets/CapCathare/CroquisCapCathareRecherches.png"
+import Mapping1 from "../../assets/Projets/CapCathare/Mapping_1.png"
+import Mapping3 from "../../assets/Projets/CapCathare/Mapping_3.png"
+import MoodboardCommente from "../../assets/Projets/CapCathare/Moodboard_commenté.png"
+import MoodboardAmbiance from "../../assets/Projets/CapCathare/Moodboard_ambiance.png"
+import MoodboardApplication from "../../assets/Projets/CapCathare/Moodboard_appli.png"
+import SpecimenCathare0 from "../../assets/Projets/CapCathare/Specimen_Cathare_page0.png"
+import SpecimenCathare1 from "../../assets/Projets/CapCathare/Specimen_Cathare_pag1.png"
+import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_page2.png"
 
 
 
 
 
+<div class="flex flex-col md:flex-row gap-12">
 
-
-<div class="flex gap-12 w-full max-w-4xl flex-col">
+<div class="flex flex-2 gap-12 w-full max-w-4xl flex-col">
 <h1 class="sr-only">Cap Cathare</h1>
   <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
@@ -46,6 +58,7 @@ import ApplicationCapCathare from "../../assets/Projets/CapCathare/CapCathare_Ap
 
     </div>
   </div>
+ 
   <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
       <h2 class="mt-0">Objectif</h2>
@@ -60,16 +73,7 @@ import ApplicationCapCathare from "../../assets/Projets/CapCathare/CapCathare_Ap
 
     </div>
   </div>
-  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
-  <div class="flex flex-col md:flex-row gap-4 h-full">
-    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
-      <Image src={BrochureCapCathare} alt="Brochure du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
-    </div>
-    <div class="w-full md:w-1/2 h-[30vh] md:h-full">
-      <Image src={ApplicationCapCathare} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
-    </div>
-  </div>
-</div>
+  
     <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
       <h2 class="mt-0">Procédé</h2>
@@ -85,4 +89,61 @@ import ApplicationCapCathare from "../../assets/Projets/CapCathare/CapCathare_Ap
       Le projet se présente comme un **parcours logique et interactif** qui lie le numérique, le territoire et la mémoire.
     </div>
   </div>
+  </div>
+
+
+<div class="flex flex-1 w-full flex-col">
+  <div class="flex w-full gap-4 shrink-0 flex-col">
+    <div class="flex flex-row gap-4">
+      <div class="w-full md:w-1/3 h-[20vh]">
+        <Image src={BrochureCapCathare} alt="Brochure du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="w-full md:w-2/3 h-[20vh]">
+        <Image src={SpecimenCathare0} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+    </div>
+
+
+  
+     <div class="flex flex-row gap-4 flex-wrap justify-center items-stretch">
+      <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={LivretCouverture} alt="Brochure du projet Cap Cathare" class="w-auto h-auto max-h-[400px] object-contain shadow-lg" />
+      </div>
+      <div class="flex-grow w-[calc(50%-0.5rem)] h-auto overflow-hidden">
+        <Image src={PostReseauxSociaux} alt="Image de l'application du projet Cap Cathare" class="w-auto h-auto object-cover shadow-lg" />
+      </div>
+       <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={CarnetCroquis} alt="Brochure du projet Cap Cathare" class="w-auto h-auto max-h-[400px] object-contain shadow-lg" />
+      </div>
+      <div class="flex-grow w-[calc(50%-0.5rem)] h-auto overflow-hidden">
+        <Image src={ApplicationCapCathare} alt="Image de l'application du projet Cap Cathare" class="w-auto h-auto max-h-[400px] object-contain shadow-lg" />
+      </div>
+         <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={Mapping1} alt="Brochure du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={Mapping3} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={MoodboardCommente} alt="Brochure du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={MoodboardAmbiance} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="w-[calc(50%-0.5rem)] h-auto ">
+        <Image src={MoodboardApplication} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+    </div>
+      <div class="flex flex-row gap-4">
+      <div class="w-full md:w-1/2 h-[20vh]">
+        <Image src={SpecimenCathare1} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="w-full md:w-1/2 h-[20vh]">
+        <Image src={SpecimenCathare2} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover shadow-lg" />
+      </div>
+    </div>
+  </div>
 </div>
+
+</div>
+

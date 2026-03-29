@@ -3,6 +3,7 @@ export const ordreProjets = [
   "rapport-de-stage-larac",
   "cap-cathare",
   "specimen-cathare",
+  "association-sozinho",
   "specimen-vista",
   "affiche-triathlon",
   "magazine-todays-points",

@@ -1,0 +1,42 @@
+---
+import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import CardProjets from '../components/CardProjets.astro'
+import EcritureCarnet from '../components/EcritureCarnet.astro'
+import MockUpPortfolio from '../assets/MockUpPortfolio.png'
+---
+
+<Layout>
+  <div
+    class="flex flex-col w-full justify-center items-center py-6 px-10 gap-4 bg-darkblue"
+  >
+    <div class="relative flex gap-4 w-fit items-center justify-center py-15">
+      <EcritureCarnet
+        color="var(--color-blue)"
+        size="large"
+        class="absolute -rotate-10 -top-3 -left-22"
+      />
+      <Image
+        src={MockUpPortfolio}
+        width={800}
+        alt="Mock-up du portfolio de Rachel Bastié"
+        class="w-full h-auto max-w-md shadow-xl"
+      />
+      <div class="absolute -right-30 bottom-10 flex flex-row gap-4">
+        <a
+          href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
+          download="PortfolioNumerique_BASTIE_Rachel.pdf"
+          class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
+          ><strong>Portfolio</strong></a
+        >
+        <a
+          href="https://www.frontendmentor.io/profile/Rachel1304"
+          target="_target"
+          class="flex items-center justify-center bg-white border-2 rounded-full px-6 py-2 md:px-4 md:py-2"
+          ><strong>Projets Frontend Mentor</strong></a
+        >
+      </div>
+    </div>
+  </div>
+  <CardProjets />
+</Layout>
