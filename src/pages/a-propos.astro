@@ -1,13 +1,355 @@
 ---
 import Layout from '../layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import PhotoRachelBastie from '../assets/PhotoPortrait_RachelBastie_2025.png'
+import Grille from '../components/grille.astro'
+import SceauCire from '../assets/SceauCirePenséeSauvage-FondTransparent.png'
+import LogoIllustrator from '../assets/LogoLogiciels/LogoIllustrator.svg'
+import LogoIndesign from '../assets/LogoLogiciels/LogoIndesign.svg'
+import LogoAfterEffects from '../assets/LogoLogiciels/LogoAfterEffects.svg'
+import LogoPhotoshop from '../assets/LogoLogiciels/LogoPhotoshop.svg'
+import LogoXD from '../assets/LogoLogiciels/LogoXD.svg'
+import LogoFigma from '../assets/LogoLogiciels/LogoFigma.svg'
+import LogoVisualStudioCode from '../assets/LogoLogiciels/LogoVisualStudioCode.svg'
+import LogoWordpress from '../assets/LogoLogiciels/LogoWordpress.svg'
+import Pencil from '../assets/hobbies/Pencil.png'
+import ImageChat from '../assets/ImageChat.png'
+import Scotch from '../assets/hobbies/Scotch.png'
+import AnimauxEtPerles from '../assets/hobbies/AnimauxEtPerles.png'
+import AnimauxPerles from '../assets/hobbies/AnimauxPerles.png'
+import Broderie from '../assets/hobbies/Broderie.png'
+import BroderieDisque from '../assets/hobbies/BroderieDisque.png'
+import Musclation from '../assets/hobbies/Musculation.png'
+import Roller from '../assets/hobbies/Roller.png'
+import Illustration from '../assets/hobbies/Illustration.png'
+import ParcoursDate from '../components/ParcoursDate.astro'
 ---
 
 <Layout>
-  <div class="flex justify-center items-center py-10 px-10">
-    <div class="flex flex-col w-full items-center max-w-5xl gap-8">
-      <div class="w-full items-end justify-end text-end">
-        <p class="text-sm md:text-base mb-2">Toucher et impacter</p>
-        <h1>Designer Graphique <br /> & Webdesigner</h1>
+  <div
+    class="flex flex-col w-full justify-center items-center overflow-hidden p-0"
+  >
+    <div
+      class="flex w-full flex-col justify-center items-center py-10 px-10 pb-30 sm:pb-10 overflow-hidden"
+    >
+      <div
+        class="relative flex flex-col w-full items-start md:items-center justify-between md:justify-center -translate-x-0 md:-translate-x-20 max-w-5xl gap-8"
+      >
+        <Image
+          src={PhotoRachelBastie}
+          width={300}
+          alt="Photo de portrait de Rachel Bastié"
+          class="w-[250px] sm:w-[260px] md:w-[280px] h-auto"
+        />
+        <div
+          class="static min-[400px]:absolute min-[400px]:bottom-4 right-0 sm:right-8 md:right-16 w-auto items-center justify-center text-center min-[400px]:items-end in-[400px]:justify-end min-[400px]:text-end"
+        >
+          <p class="text-sm md:text-base mb-1 md:mb-2">Toucher et impacter</p>
+          <h1>Designer Graphique <br /> & Webdesigner</h1>
+        </div>
+      </div>
+      <div class="flex w-full items-center justify-center py-10 pb-40">
+        <div class="relative flex flex-col px-10 h-50 w-full max-w-3xl">
+          <h3>Artisane Digitale</h3>
+          <div
+            class="absolute -top-10 z-1 -right-8 sm:right-8 md:right-12 w-32 sm:w-36 md:w-40 rotate-[-15deg] pointer-events-none"
+          >
+            <Image
+              src={SceauCire}
+              alt="Tampon de pensée sauvage symbolisant la réflexion profonde et la recherche"
+              class="hidden min-[380px]:block w-full h-auto"
+            />
+          </div>
+          <div
+            class="absolute z-1 top-15 md:top-25 left-20 md:left-30 pr-10 flex flex-col max-w-xl"
+          >
+            <h4>Qui suis-je ?</h4>
+            <p>
+              Designer graphique et webdesigner, je cultive un profil <strong
+                >hybride</strong
+              > où l’exigence du print rencontre la performance du numérique. Diplômée
+              d'un Bachelor en Design, j'envisage chaque projet comme un <strong
+                >terrain d'exploration</strong
+              >
+              où la <strong>main de l'artisan</strong> guide l'outil technologique.
+            </p>
+            <div class="flex flex-row items-end justify-end gap-4 py-4">
+              <a
+                href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
+                download="PortfolioNumerique_BASTIE_Rachel.pdf"
+                class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
+                ><strong>CV</strong></a
+              >
+              <a
+                href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
+                download="PortfolioNumerique_BASTIE_Rachel.pdf"
+                class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
+                ><strong>Portfolio</strong></a
+              >
+            </div>
+          </div>
+          <div class="absolute left-5 sm:left-15 top-10 sm:top-0">
+            <Grille size="medium" />
+          </div>
+        </div>
+      </div>
+      <div
+        class="hidden sm:block absolute sm:-bottom-20 md:-bottom-50 right-0 -z-10 pointer-events-none"
+      >
+        <img
+          id="deco-svg"
+          src="/deco-fond.svg"
+          alt="Décoration"
+          loading="eager"
+          decoding="async"
+          class="w-45 h-auto opacity-100 md:w-60 lg:w-80"
+        />
+      </div>
+    </div>
+    <div class="w-full flex flex-col p-10">
+      <h4>Mon parcours</h4>
+      <ParcoursDate />
+    </div>
+    <div class="w-full flex flex-col bg-blue p-10 items-center">
+      <div class="flex max-w-4xl w-full items-start">
+        <h4 class="w-full text-left">Mes compétences</h4>
+      </div>
+
+      <div
+        class="flex flex-row md:flex-col justify-center max-w-6xl gap-0 md:gap-8"
+      >
+        <div
+          class="flex flex-col w-0.1 md:w-10 md:flex-row flex-1 gap-12 flex-shrink-0"
+        >
+          <Image
+            src={LogoIllustrator}
+            alt="Logiciel Adobe Illustrator"
+          />
+          <Image
+            src={LogoIndesign}
+            alt="Logiciel Adobe Indesign"
+          />
+          <Image
+            src={LogoAfterEffects}
+            alt="Logiciel Adobe After Effects"
+          />
+          <Image
+            src={LogoPhotoshop}
+            alt="Logiciel Adobe Photoshop"
+          />
+          <Image
+            src={LogoXD}
+            alt="Logiciel Adobe XD"
+          />
+          <Image
+            src={LogoFigma}
+            alt="Logiciel Adobe Figma"
+          />
+          <Image
+            src={LogoVisualStudioCode}
+            alt="Logiciel Adobe Visual Studio Code"
+          />
+          <Image
+            src={LogoWordpress}
+            alt="Logiciel Adobe Wordpress"
+          />
+        </div>
+        <div class="flex flex-col md:flex-row flex-3 md:flex-6">
+          <div class="flex flex-col md:flex-1">
+            <h5>Hard skills</h5>
+            <div class="flex flex-col">
+              <strong>Design Stratégique :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>Moodboard & recherches iconographiques</li>
+                <li>Justification de concept</li>
+                <li>Identité visuelle 360° et supports de communication</li>
+              </ul>
+            </div>
+            <div class="flex flex-col">
+              <strong>Conception Plastique :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>Dessin de recherche et expérimentations de textures</li>
+                <li>Mise en page print</li>
+              </ul>
+            </div><div class="flex flex-col">
+              <strong>Webdesign & Intégration :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>UI/UX et prototypage</li>
+                <li>Intégration Astro (HTML/CSS/JavaScript)</li>
+                <li>Respect des standards de performance</li>
+              </ul>
+            </div>
+          </div>
+          <div class="flex flex-col md:flex-1">
+            <h5 class="pt-8 md:pt-0">Soft skills</h5>
+            <div class="flex flex-col">
+              <strong>Rigueur Analytique :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>
+                  Capacité à argumenter et valoriser chaque parti pris créatif
+                </li>
+              </ul>
+            </div>
+            <div class="flex flex-col">
+              <strong>Curiosité & Apprentissage Continu :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>Esprit observateur</li>
+                <li>
+                  Soif d'apprendre pour maîtriser les nouvelles technologies
+                </li>
+                <li>Savoir transformer le "comment" en "quoi" innovant</li>
+              </ul>
+            </div>
+            <div class="flex flex-col">
+              <strong>Éthique & Conscience Professionnelle :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>Approche consciencieuse et persévérante</li>
+                <li>Livrables de haute qualité, même sous pression</li>
+              </ul>
+            </div>
+            <div class="flex flex-col">
+              <strong>Discipline & Résilience :</strong>
+              <ul class="list-disc ml-2 leading-tight marker:text-red">
+                <li>Un état d'esprit sportif appliqué au travail</li>
+                <li>Goût du challenge</li>
+                <li>Persévérance dans l'effort</li>
+                <li>Maintien de la cohérence de marque sur le long terme</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative w-full pb-20 p-8 pt-0 sm:p-16 sm:pt-0 md:pt-0 md:p-24 flex justify-center overflow-hidden items-center bg-gradient-to-b from-blue from-50% to-white to-50%"
+    >
+      <div class="flex flex-col max-w-4xl bg-white border-2 border-red p-8">
+        <h4>Ma signature</h4>
+        <h5>Profil hybride et curieux</h5>
+        <p>
+          Injecter de la sensorialité dans l’immatériel. Là où le digital peut
+          sembler froid, j'apporte la vibration du geste : typographies
+          dessinées à la main, textures organiques peintes à la tablette et
+          matières vivantes. Je ne crée pas seulement des interfaces, je conçois
+          des objets numériques tactiles.
+        </p><div
+          class="absolute -bottom-0 -right-4 md:right-50 md:bottom-2 w-32 sm:w-36 md:w-40 rotate-[-15deg] pointer-events-none"
+        >
+          <Image
+            src={SceauCire}
+            alt="Tampon de pensée sauvage symbolisant la réflexion profonde et la recherche"
+            class="w-full h-auto"
+          />
+        </div>
+        <div
+          class="absolute -bottom-8 -right-24 sm:-bottom-4 sm:-right-18 md:right-10 md:bottom-4"
+        >
+          <Image
+            src={Pencil}
+            alt="Crayon à papier"
+            class="flex w-64 -rotate-150"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-row pb-10 gap-8 px-10 sm:px-20 max-w-4xl">
+      <div><p class="text-8xl">“</p></div>
+      <div class="flex flex-3 flex-col">
+        <strong>Ma promesse :</strong>
+        <p class="italic">
+          Un design qui ne se contente pas d'être "joli", mais qui est pensé
+          pour l'impact, la rapidité de chargement et l'émotion utilisateur.
+        </p>
+      </div>
+      <div><p class="text-8xl">”</p></div>
+    </div>
+    <div
+      class="flex w-full flex-row bg-darkblue p-5 items-center justify-center"
+    >
+      <div
+        class="flex flex-col sm:flex-row max-w-4xl items-center justify-center gap-8 p-10"
+      >
+        <div class="h-64 flex flex-1 overflow-hidden flex-shrink-0">
+          <Image
+            src={ImageChat}
+            alt="Dessin vectorisé d'un travail sur une tête de chat réalisé en pastel"
+            class="w-full h-full object-cover object-[60%_100%]"
+          />
+        </div>
+        <div class="flex flex-3 flex-col max-w-xl">
+          <h4>Mon ambition</h4>
+          <h5 class="text-blue">Objectif</h5>
+          <p class="text-white max-w-2xl">
+            Mon objectif est d’associer la particularité et l’originalité des
+            techniques fait main avec l’importance web. <br />Je transforme une
+            vision stratégique en un écosystème visuel cohérent et créatif, du
+            logotype au site web qualitatif.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-col w-full p-10 max-w-4xl justify-between">
+      <h4>Mes passions dans la vie</h4>
+      <div class="relative flex items-end justify-end">
+        <Image
+          src={Scotch}
+          alt="Lot d'animaux en perles"
+          class="hidden sm:block w-80 z-2 rotate-15"
+        />
+        <Image
+          src={AnimauxEtPerles}
+          alt="Lot d'animaux en perles"
+          class="hidden sm:block sm:absolute w-100 z-3"
+        />
+        <div class="absolute -right-10 sm:-right-5 top-10">
+          <Grille size="medium" />
+        </div>
+      </div>
+      <div class="flex flex-col w-full items-center justify-center z-2 gap-4">
+        <div class="flex flex-wrap items-center justify-around gap-4">
+          <div class="flex flex-col items-center justify-center">
+            <Image
+              src={AnimauxPerles}
+              alt="Animaux en perles"
+              class="w-40 sm:w-60"
+            />
+            <p>Animaux en perles</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <Image
+              src={BroderieDisque}
+              alt="Photo de broderie"
+              class="w-40 sm:w-60"
+            />
+            <p>Broderie, couture et perles</p>
+          </div>
+        </div>
+        <div class="flex flex-wrap items-center justify-around gap-4">
+          <div class="flex flex-col items-center justify-center">
+            <Image
+              src={Illustration}
+              alt="Animaux en perles"
+              class="w-40 sm:w-60"
+            />
+            <p>Dessin, peinture et pastel</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <Image
+              src={Roller}
+              alt="Photo de broderie"
+              class="w-40 sm:w-60"
+            />
+            <p>Roller</p>
+          </div>
+          <div class="flex flex-col items-center justify-center">
+            <Image
+              src={Musclation}
+              alt="Photo de broderie"
+              class="w-40 sm:w-60"
+            />
+            <p>Musculation & randonnées</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>

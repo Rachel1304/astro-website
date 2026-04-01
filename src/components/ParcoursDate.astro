@@ -1,0 +1,98 @@
+---
+import TimelineItem from '../assets/TimelineItem.astro'
+
+const experiences = [
+  {
+    date: '2025 - 2026',
+    title: 'Job étudiant Employé Drive',
+    company: 'Leclerc _ Blagnac',
+    side: 'left',
+    color: 'blue',
+    y: 50,
+  },
+  {
+    date: '2022 - 2025',
+    title: 'Bac +4 Design Graphique',
+    company: 'Brassart _ Toulouse',
+    side: 'right',
+    color: 'red',
+    y: 150,
+  },
+  {
+    date: '2022 - 2025',
+    title: 'Bénévole Responsable',
+    company:
+      'Responsable de la section Kick-Boxing et des salles de Musculation Association Sportive de la Caserne Courrège de la Gendarmerie Midi-Pyrénées (A.S.C.G.M.P) _ Toulouse',
+    side: 'left',
+    color: 'blue',
+    y: 250,
+  },
+  {
+    date: '07/2025',
+    title: 'Cap Cathare',
+    company: 'Brassart _ Toulouse',
+    side: 'right',
+    color: 'red',
+    y: 550,
+  },
+]
+---
+
+<div class="timeline-container">
+  <svg
+    viewBox="0 0 1000 2000"
+    preserveAspectRatio="none"
+    class="timeline-svg"
+  >
+    <path
+      d="M 20,20 C 800,100 400,800 200,1200 S 200,1800 600,1980"
+      fill="none"
+      stroke="var(--color-blue)"
+      stroke-width="5"
+      stroke-linecap="round"
+    ></path>
+
+    {
+      experiences.map((exp) => (
+        <line
+          x1={exp.side === 'left' ? 50 : 350}
+          y1={exp.y}
+          x2={exp.side === 'left' ? 200 : 500}
+          y2={exp.y}
+          stroke="var(--color-blue)"
+          stroke-width="2"
+        />
+      ))
+    }
+  </svg>
+
+  <div class="content-overlay">
+    {experiences.map((exp) => <TimelineItem {...exp} />)}
+  </div>
+</div>
+
+<style>
+  .timeline-container {
+    position: relative;
+    width: 100%;
+    min-height: 2000px; /* Doit correspondre à la hauteur du viewBox */
+  }
+
+  .timeline-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .content-overlay {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Deux colonnes pour gauche/droite */
+    width: 100%;
+  }
+</style>

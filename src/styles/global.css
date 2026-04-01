@@ -16,29 +16,40 @@
     @apply text-4xl font-lora font-bold italic break-words text-darkblue;
   }
   h2{
-    @apply text-4xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-3xl;}
+    @apply text-4xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-3xl;
   }
   h3{
-    @apply text-xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
+    @apply text-2xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
   }
   h4{
-    @apply text-lg md:text-xl font-lora text-darkblue mb-5 mt-0 break-words;
+    @apply text-xl md:text-2xl text-red font-lora italic font-bold mb-5 mt-0 break-words;
+  }
+  h5 {
+    @apply text-sm uppercase font-neue-haas-grotesk-display-pro font-semibold text-darkblue mb-5 mt-0 break-words;
   }
 
 
   strong{
     @apply font-semibold;
   }
+
   p{
-    @apply text-base mb-2 tracking-wider;
+    @apply text-base font-neue-haas-grotesk-display-pro font-normal mb-2 tracking-wider;
   }
-a {
+  
+
+  a {
     @apply text-lg;
   }
+
   h3 + p {
     @apply mt-0;
   }
- 
+
+  h4:has(+ h5), 
+  h4:has(+ div h5) {
+  margin-bottom: 0 !important;
+  }
 
   .subtitle-da {
   font-weight: 600;
@@ -69,13 +80,11 @@ li {
 }
 
 
-  body {
-    margin: 0;
-    background-color: var(--color-white);
-    color: var(--color-darkblue);
-    
-  }
-
 body {
+  margin: 0;
+  background-color: var(--color-white);
+  color: var(--color-darkblue);
   font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+}
+
 }
