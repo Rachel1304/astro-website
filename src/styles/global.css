@@ -59,6 +59,18 @@
   color: var(--color-darkblue); 
 }
 
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px); /* Décalage vers le bas */
+  transition: all 0.8s ease-out; /* Animation fluide */
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0); /* Retour à la position normale */
+}
+
 /* 1. On cible toutes les listes dans tes fichiers de contenu */
 ul {
   list-style-type: disc !important; /* Force les points */
