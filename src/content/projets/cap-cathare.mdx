@@ -39,9 +39,122 @@ import SpecimenCathare1 from "../../assets/Projets/CapCathare/Specimen_Cathare_p
 import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_page2.png"
 
 
+<div class="flex flex-col gap-24 w-full max-w-7xl items-center justify-center">
+  <h1 class="sr-only">Cap Cathare</h1>
+  <div class="flex justify-center items-start gap-8 flex-col md:flex-row">
+    <div class="flex flex-1 flex-col justify-center items-start px-10  gap-4">
+      <h2 class="mt-0">Contexte</h2>
+      <p class="subtitle-da">**Projet de fin d’année 2024–2025**</p>
+      <div class="flex flex-col">
+      *Cathare* est un projet destiné à sensibiliser les jeunes enfants âgés d’environ **8 à 12 ans** sur l’histoire cathare.
+      Il a pour but de valoriser le patrimoine occitan à travers trois piliers d’éducation : l’école, les amis et la famille. 
+      
+      Une recherche préalable sur l’impact des voyages scolaires et de l’implication parentale a démontré l’importance d’un dispositif mêlant **jeu**, **exploration** et **interaction intergénérationnelle**.
+      </div>
+    </div>
+    <div class="relative w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center">
+      <div class="flex flex-row gap-4 w-[60dvh] justify-start items-center z-1">
+        <div class="w-auto h-auto">
+          <Image src={Mapping1} alt="Brochure du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
+        </div>
+        <div class="w-auto h-auto translate-y-10">
+          <Image src={Mapping3} alt="Image de l'application du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
+        </div>
+      </div>
+      <div class="absolute top-25 left-25 flex flex-row gap-4 w-[60dvh] justify-start items-center">
+        <div class="w-auto h-auto">
+          <Image src={MoodboardAmbiance} alt="Moodboard d'ambiance" class="reveal w-full h-full object-cover shadow-lg" />
+        </div>
+        <div class="translate-y-10 w-auto h-auto">
+          <Image src={MoodboardCommente} alt="Moodboard commenté" class="reveal w-full h-full object-cover shadow-lg" />
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  <div class="flex justify-center items-center gap-8 flex-col-reverse md:flex-row pt-25 md:pt-0">
+     <div class="w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center">
+      <div class="flex flex-row gap-4 w-[60dvh] justify-start items-center z-1">
+        <div class="w-auto h-auto">
+          <Image src={Mapping1} alt="Brochure du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
+        </div>
+        <div class="w-auto h-auto translate-y-10">
+          <Image src={Mapping3} alt="Image de l'application du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
+        </div>
+      </div>
+      <div class="top-25 left-25 flex flex-row gap-4 w-[60dvh] justify-start items-center">
+        <div class="w-auto h-auto">
+          <Image src={MoodboardAmbiance} alt="Moodboard d'ambiance" class="reveal w-full h-full object-cover shadow-lg" />
+        </div>
+        <div class="translate-y-10 w-auto h-auto">
+          <Image src={MoodboardCommente} alt="Moodboard commenté" class="reveal w-full h-full object-cover shadow-lg" />
+        </div>
+      </div>
+    </div>
+    <div class="flex flex-1 flex-col justify-center items-start px-10  gap-4">
+      <h2 class="mt-0">Objectif</h2>
+      <div class="flex flex-col">
+       L'idée centrale est de concevoir une expérience éducative combinant :
+      * **Typographie** originale,
+      * **Affichage interactif**,
+      * **Application mobile**.
 
+      Dans cette expérience, les enfants résolvent des jeux graphiques pour gagner des points et débloquer des éléments. En complément, un **carnet de visite à tamponner**, distribué dans les châteaux cathares, prolonge l’aventure physique et encourage la mémoire ainsi que la découverte du territoire.
 
+      </div>
+    </div>    
+  </div>
 
+  <div class="flex justify-center items-start gap-8 flex-col md:flex-row">
+    <div class="flex flex-1 flex-col justify-center items-start px-10 gap-4">
+      <h2 class="mt-0">Procédé</h2>
+      <div class="flex flex-col">
+      Le projet a démarré par une **recherche documentaire et comportementale**, visant à identifier un besoin véritable relatif au champ de l’histoire. J’ai ensuite développé une stratégie de communication centrée sur l’exploration, le jeu et la narration visuelle.
+
+      L’élaboration de la police *Cathare*, alliant lignes droites et courbes douces, a été réalisée en parallèle avec :
+      1.  La création de l’univers visuel.
+      2.  Le développement des mécanismes de jeu.
+      3.  La conception de l’expérience utilisateur (UX).
+
+      Le projet se présente comme un **parcours logique et interactif** qui lie le numérique, le territoire et la mémoire.
+     </div>
+    </div>
+    <div class="translate-y-10 w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center">
+      <div class="flex flex-row gap-4 justify-start items-center z-1">
+        <div class=" w-full h-64 md:h-80 overflow-hidden">
+          <Image src={CarnetCroquis} alt="Croquis et recherches graphiques" class="reveal w-full h-full object-cover object-center shadow-xl" />
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
+
+<script>
+  {`
+    // apparition après 20% de visibilité
+  const observerOptions = {
+  root: null,      // Par défaut : le viewport (l'écran)
+  threshold: 0.2   // 0.2 équivaut à 20%
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// On lance l'observation sur tes images
+document.querySelectorAll('.reveal').forEach(img => {
+  observer.observe(img);
+});
+  `}
+</script>
+
+{/* 
 <div class="flex flex-col md:flex-row gap-12">
 
 <div class="flex flex-2 gap-12 w-full max-w-4xl flex-col">
@@ -145,5 +258,5 @@ import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_p
   </div>
 </div>
 
-</div>
+</div> */}
 
