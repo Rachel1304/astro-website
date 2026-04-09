@@ -28,7 +28,7 @@ import BrochureCapCathare from "../../assets/Projets/CapCathare/CapCathare_Broch
 import ApplicationCapCathare from "../../assets/Projets/CapCathare/CapCathare_Application.png"
 import LivretCouverture from "../../assets/Projets/CapCathare/CapCathare_Livret_01.png"
 import PostReseauxSociaux from "../../assets/Projets/CapCathare/CapCathare_post&story.png"
-import CarnetCroquis from "../../assets/Projets/CapCathare/CroquisCapCathareRecherches.png"
+import CarnetCroquis from "../../assets/Projets/CapCathare/CroquisCapCathareRecherchesDetourage.png"
 import Mapping1 from "../../assets/Projets/CapCathare/Mapping_1.png"
 import Mapping3 from "../../assets/Projets/CapCathare/Mapping_3.png"
 import MoodboardCommente from "../../assets/Projets/CapCathare/Moodboard_commenté.png"
@@ -37,12 +37,14 @@ import MoodboardApplication from "../../assets/Projets/CapCathare/Moodboard_appl
 import SpecimenCathare0 from "../../assets/Projets/CapCathare/Specimen_Cathare_page0.png"
 import SpecimenCathare1 from "../../assets/Projets/CapCathare/Specimen_Cathare_pag1.png"
 import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_page2.png"
+import RecherchesTravauxCathare from "../../assets/Projets/CapCathare/CapCathre_RecherchesTravaux.png"
+import CapCatharePiece from "../../assets/Projets/CapCathare/CapCathare_Pictogramme_pièce.png"
 
 
-<div class="flex flex-col gap-24 w-full max-w-7xl items-center justify-center">
+<div class="flex flex-col gap-20 w-full max-w-6xl items-center justify-center">
   <h1 class="sr-only">Cap Cathare</h1>
-  <div class="flex justify-center items-start gap-8 flex-col md:flex-row">
-    <div class="flex flex-1 flex-col justify-center items-start px-10  gap-4">
+  <div class="flex justify-center items-start gap-8 flex-col lg:flex-row">
+    <div class="flex flex-1 flex-col justify-center items-start gap-4">
       <h2 class="mt-0">Contexte</h2>
       <p class="subtitle-da">**Projet de fin d’année 2024–2025**</p>
       <div class="flex flex-col">
@@ -52,16 +54,17 @@ import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_p
       Une recherche préalable sur l’impact des voyages scolaires et de l’implication parentale a démontré l’importance d’un dispositif mêlant **jeu**, **exploration** et **interaction intergénérationnelle**.
       </div>
     </div>
-    <div class="relative w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center">
-      <div class="flex flex-row gap-4 w-[60dvh] justify-start items-center z-1">
+    <div class="relative w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center pb-10 md:pb-0">
+      <div class="flex flex-row gap-4 w-[50vh] sm:w-[40dvh] md:w-[60dvh] justify-start items-center z-1">
         <div class="w-auto h-auto">
           <Image src={Mapping1} alt="Brochure du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
         </div>
-        <div class="w-auto h-auto translate-y-10">
+        <div class="relative w-auto h-auto translate-y-10">
           <Image src={Mapping3} alt="Image de l'application du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
+        <div class="absolute w-24 h-auto rotate-20 -top-15 -right-15"><Image src={CapCatharePiece} alt="Pictogramme de pièce"/></div>
         </div>
       </div>
-      <div class="absolute top-25 left-25 flex flex-row gap-4 w-[60dvh] justify-start items-center">
+      <div class="absolute top-28 md:top-30 left-10 md:left-25 flex flex-row gap-4 w-[50vh] sm:w-[40dvh] md:w-[60dvh] justify-center items-center">
         <div class="w-auto h-auto">
           <Image src={MoodboardAmbiance} alt="Moodboard d'ambiance" class="reveal w-full h-full object-cover shadow-lg" />
         </div>
@@ -74,24 +77,11 @@ import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_p
   </div>
   <div class="flex justify-center items-center gap-8 flex-col-reverse md:flex-row pt-25 md:pt-0">
      <div class="w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center">
-      <div class="flex flex-row gap-4 w-[60dvh] justify-start items-center z-1">
         <div class="w-auto h-auto">
-          <Image src={Mapping1} alt="Brochure du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
+          <Image src={RecherchesTravauxCathare} alt="Recherches et travaux réalisés" class="reveal w-full h-full object-cover" />
         </div>
-        <div class="w-auto h-auto translate-y-10">
-          <Image src={Mapping3} alt="Image de l'application du projet Cap Cathare" class="reveal w-full h-full object-cover shadow-xl" />
-        </div>
-      </div>
-      <div class="top-25 left-25 flex flex-row gap-4 w-[60dvh] justify-start items-center">
-        <div class="w-auto h-auto">
-          <Image src={MoodboardAmbiance} alt="Moodboard d'ambiance" class="reveal w-full h-full object-cover shadow-lg" />
-        </div>
-        <div class="translate-y-10 w-auto h-auto">
-          <Image src={MoodboardCommente} alt="Moodboard commenté" class="reveal w-full h-full object-cover shadow-lg" />
-        </div>
-      </div>
     </div>
-    <div class="flex flex-1 flex-col justify-center items-start px-10  gap-4">
+    <div class="flex flex-1 flex-col justify-center items-start gap-4">
       <h2 class="mt-0">Objectif</h2>
       <div class="flex flex-col">
        L'idée centrale est de concevoir une expérience éducative combinant :
@@ -105,8 +95,8 @@ import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_p
     </div>    
   </div>
 
-  <div class="flex justify-center items-start gap-8 flex-col md:flex-row">
-    <div class="flex flex-1 flex-col justify-center items-start px-10 gap-4">
+  <div class="flex justify-center items-start gap-8 flex-col md:flex-row overflow-hidden">
+    <div class="flex flex-1 flex-col justify-center items-start gap-4">
       <h2 class="mt-0">Procédé</h2>
       <div class="flex flex-col">
       Le projet a démarré par une **recherche documentaire et comportementale**, visant à identifier un besoin véritable relatif au champ de l’histoire. J’ai ensuite développé une stratégie de communication centrée sur l’exploration, le jeu et la narration visuelle.
@@ -119,12 +109,10 @@ import SpecimenCathare2 from "../../assets/Projets/CapCathare/Specimen_Cathare_p
       Le projet se présente comme un **parcours logique et interactif** qui lie le numérique, le territoire et la mémoire.
      </div>
     </div>
-    <div class="translate-y-10 w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center">
-      <div class="flex flex-row gap-4 justify-start items-center z-1">
-        <div class=" w-full h-64 md:h-80 overflow-hidden">
+    <div class="w-full flex flex-1 flex-col md:flex-row gap-0 flex-wrap items-center justify-center">
+        <div class="w-54 sm:w-80 md:w-100 h-full overflow-hidden">
           <Image src={CarnetCroquis} alt="Croquis et recherches graphiques" class="reveal w-full h-full object-cover object-center shadow-xl" />
         </div>
-      </div>
     </div>
     
   </div>
