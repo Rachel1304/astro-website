@@ -1,3 +1,115 @@
+/* --- LORA --- */
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Regular.ttf') format('truetype');
+  font-weight: 400; /* Roman / Classique */
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-SemiBold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-SemiBoldItalic.ttf') format('truetype');
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lora';
+  src: url('/fonts/Lora-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- NEUE HAAS GROTESK --- */
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayLightItalic.ttf') format('truetype');
+  font-weight: 300; /* Light */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayRoman.ttf') format('truetype');
+  font-weight: 400; /* Roman / Classique */
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayRomanItalic.ttf') format('truetype');
+  font-weight: 400; /* Roman / Classique */
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayMedium.ttf') format('truetype'); /* Souvent utilisé pour SemiBold */
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayMediumItalic.ttf') format('truetype'); /* Souvent utilisé pour SemiBold */
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Neue Haas Grotesk Display Pro';
+  src: url('/fonts/NeueHaasDisplayBoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+  font-display: swap;
+}
+
+
+
 @import "tailwindcss";
 
 @theme {
@@ -13,7 +125,7 @@
 
 @layer base {
   h1{
-    @apply text-4xl font-lora font-bold italic break-words text-darkblue;
+    @apply text-5xl font-lora font-bold italic break-words text-darkblue;
   }
   h2{
     @apply text-4xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-3xl;
@@ -22,7 +134,7 @@
     @apply text-2xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
   }
   h4{
-    @apply text-xl md:text-2xl text-red font-lora italic font-bold mb-5 mt-0 break-words;
+    @apply text-xl md:text-2xl text-red font-lora italic font-semibold mb-5 mt-0 break-words;
   }
   h5 {
     @apply text-sm uppercase font-neue-haas-grotesk-display-pro font-semibold text-darkblue mb-5 mt-0 break-words;
@@ -58,6 +170,7 @@
   text-transform: uppercase; /* Optionnel : pour un look très pro */
   color: var(--color-darkblue); 
 }
+
 
 
 .reveal {
@@ -96,7 +209,7 @@ body {
   margin: 0;
   background-color: var(--color-white);
   color: var(--color-darkblue);
-  font-family: 'Neue Haas Grotesk Display Pro', sans-serif;
+  font-family: var(--font-neue-haas-grotesk);
 }
 
 }
