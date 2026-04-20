@@ -8,13 +8,13 @@ import MockUpPortfolio from '../assets/MockUpPortfolio.png'
 
 <Layout>
   <div
-    class="flex flex-col w-full justify-center items-center py-6 px-10 gap-4 bg-darkblue"
+    class="flex flex-col w-full justify-center items-center py-6 px-10 gap-4 bg-darkblue overflow-hidden"
   >
     <div class="relative flex gap-4 w-fit items-center justify-center py-15">
       <EcritureCarnet
         color="var(--color-blue)"
         size="large"
-        class="absolute -rotate-10 -top-3 -left-22"
+        class="absolute -rotate-10 top-2 -left-12 sm:-top-3 sm:-left-22"
       />
       <Image
         src={MockUpPortfolio}
@@ -22,7 +22,9 @@ import MockUpPortfolio from '../assets/MockUpPortfolio.png'
         alt="Mock-up du portfolio de Rachel Bastié"
         class="w-full h-auto max-w-md shadow-xl"
       />
-      <div class="absolute -right-30 bottom-10 flex flex-row gap-4">
+      <div
+        class="absolute -right-4 bottom-10 sm:-right-30 sm:bottom-10 flex flex-row gap-4"
+      >
         <a
           href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
           download="PortfolioNumerique_BASTIE_Rachel.pdf"

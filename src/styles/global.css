@@ -47,6 +47,7 @@
   font-display: swap;
 }
 
+
 /* --- NEUE HAAS GROTESK --- */
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
@@ -125,16 +126,16 @@
 
 @layer base {
   h1{
-    @apply text-5xl font-lora font-bold italic break-words text-darkblue;
+    @apply text-4xl font-lora font-bold italic break-words text-darkblue;
   }
   h2{
-    @apply text-4xl font-lora text-red mb-0 mt-4 font-bold italic break-words md:text-3xl;
+    @apply text-3xl font-lora text-red mb-0 mt-4 font-bold italic break-words;
   }
   h3{
-    @apply text-2xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
+    @apply text-xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
   }
   h4{
-    @apply text-xl md:text-2xl text-red font-lora italic font-semibold mb-5 mt-0 break-words;
+    @apply text-xl md:text-2xl text-red font-lora font-bold italic mb-5 mt-0 break-words;
   }
   h5 {
     @apply text-sm uppercase font-neue-haas-grotesk-display-pro font-semibold text-darkblue mb-5 mt-0 break-words;
@@ -142,7 +143,7 @@
 
 
   strong{
-    @apply font-semibold;
+    @apply font-semibold font-neue-haas-grotesk-display-pro;
   }
 
   p{
@@ -199,6 +200,7 @@ ol {
 
 /* 2. On s'assure que les éléments de liste ont un peu d'espace */
 li {
+  @apply text-base font-neue-haas-grotesk-display-pro font-normal tracking-wider;
   padding-left: 0.5rem;
   margin-bottom: 0.25rem;
   display: list-item; /* Indispensable pour que la puce s'affiche */

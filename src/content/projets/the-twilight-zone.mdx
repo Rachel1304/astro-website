@@ -10,7 +10,7 @@ couleurFondBtn: ""
 lieu: ""
 date: "2024-12-21"
 cover1: {
-  src: "../../assets/Projets/TheTwilightZone/Couv_The_Twilight_Zone.png",
+  src: "../../assets/Projets/TheTwilightZone/Couv_portrait_The_Twilight_Zone.png",
   alt: "Revisite du générique The Twilight Zone"
 }
 cover2: {
@@ -27,7 +27,8 @@ import couvTheTwilightZone from "../../assets/Projets/TheTwilightZone/Couv_The_T
 import Twilight_details_01 from "../../assets/Projets/TheTwilightZone/Plan_TheTwilightZone_08.png"
 import Twilight_details_02 from "../../assets/Projets/TheTwilightZone/Plan_TheTwilightZone_11.png"
 import videoTheTwilightZone from "../../assets/Projets/TheTwilightZone/Generique-TheTwilightZone.mp4"
-
+import Twilight_modele from "../../assets/Projets/TheTwilightZone/Modele_TheTwilightZone.jpeg"
+import Twilight_mockup from "../../assets/Projets/TheTwilightZone/Mockup_TheTwilightZone.png"
 
 <div class="flex gap-12 w-full max-w-4xl flex-col">
 <h1 class="sr-only">The Twilight Zone</h1>
@@ -92,6 +93,15 @@ import videoTheTwilightZone from "../../assets/Projets/TheTwilightZone/Generique
 
       Le résultat final propose un voyage entre **nostalgie** et **modernité**, ancré dans une esthétique de l'étrange.
     </div>
+  </div>
+
+  <div class="relative w-full flex flex-1 flex-col md:flex-row gap-6 flex-wrap items-center justify-center pb-10 md:pb-0">
+   <div class="flex flex-row gap-4 w-[50vh] sm:w-[40dvh] md:w-[60dvh] justify-start items-center z-1">
+    <div class="relative w-auto h-auto">
+      <Image src={Twilight_modele} alt="Image de l'application du projet Cap Cathare" class="w-full h-full object-cover" />
+    <div class="absolute w-64 h-auto -rotate-20 -bottom-20 -left-20"><Image src={Twilight_mockup} alt="Pictogramme de pièce"/></div>
+    </div>
+  </div>
   </div>
   
 </div>
