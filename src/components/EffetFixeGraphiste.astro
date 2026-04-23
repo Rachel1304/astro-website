@@ -61,11 +61,9 @@ const projets = await getCollection('projets')
   const titre = document.getElementById('titreGraphiste')
   const accroche = document.getElementById('accroche')
 
-  //On éxécute le programme au scroll de mon écran
-  window.addEventListener('scroll', () => {
+  const updateAnimation = () => {
     const scrollY = window.scrollY
-    const isMobile = window.innerWidth < 700
-    const maxScroll = 400 // La distance de scroll sur laquelle l'animation se fait
+    const width = window.innerWidth
 
     // On calcule un ratio entre 0 et 1
     // 0 = tout en haut | 1 = animation terminée
@@ -74,22 +72,34 @@ const projets = await getCollection('projets')
     // Ce ratio reste à 0 tant que scrollY < 200
     // Si tu as mis pb-20 (80px), on réduit moveUp d'autant.
     const ratioTitre = Math.min(Math.max(scrollY / 400, 0), 1)
+    // Configuration par support
+    let config = {
+      moveUp: -150, // Desktop par défaut
+      scaleDivisor: 0.4,
+    }
+    if (width < 768) {
+      // --- MOBILE ---
+      config.moveUp = -230
+      config.scaleDivisor = 0.35
+    } else if (width >= 768 && width <= 1024) {
+      // --- TABLETTE ---
+      // Ici on ajuste pour que ça rentre bien dans l'espace tablette
+      config.moveUp = -200
+      config.scaleDivisor = 0.5
+    } else {
+      // --- DESKTOP (Large) ---
+      config.moveUp = -210
+      config.scaleDivisor = 0.45
+    }
 
     if (titre) {
-      if (scrollY <= 0) {
-        //Retour à la normal (pour être sure que ce soit fait)
-        const moveUp = ratioTitre * (isMobile ? -200 : -180)
-        const scale = 1 - 0.35 * ratioTitre
-      } else {
-        // Interpolation du TOP: de la position de départ - (la distance à parcourir * ratio)
-        const moveUp = ratioTitre * (isMobile ? -200 : -180)
-        //Interpolation du Scale = taille de l'élément
-        const currentScale = 1 - 0.4 * ratioTitre //0.2 est ce qui sera retiré à l'élément
+      const finalMove = ratioTitre * config.moveUp
+      const finalScale = 1 - config.scaleDivisor * ratioTitre
 
-        titre.style.transform = `translateY(${moveUp}px) scale(${currentScale})`
-        titre.style.transformOrigin = 'top center'
-      }
+      titre.style.transform = `translateY(${finalMove}px) scale(${finalScale})`
+      titre.style.transformOrigin = 'top center'
     }
+
     if (accroche) {
       //L'accroche disparaît progressivement
       accroche.style.opacity = (1 - ratioAccroche * 2).toString() //Le 1.5 est la vitesse de disparition
@@ -98,5 +108,9 @@ const projets = await getCollection('projets')
       // On désactive les clics quand elle est invisible
       accroche.style.pointerEvents = ratioAccroche === 1 ? 'none' : 'auto'
     }
-  })
+  }
+  window.addEventListener('scroll', updateAnimation)
+  // On lance une fois au chargement pour éviter un saut visuel si on refresh en milieu de page
+  window.addEventListener('resize', updateAnimation)
+  updateAnimation()
 </script>
