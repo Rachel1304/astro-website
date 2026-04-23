@@ -38,44 +38,46 @@ if (!nextProjet) {
 ---
 
 <Layout>
-  <div class="fixed top-0 left-0 w-full h-[80vh] -z-10">
+  <div class="fixed top-0 left-0 w-full h-[85vh] -z-10">
     <Image
       src={post.data.cover1.src}
       alt={post.data.cover1.alt}
       class="w-full h-full object-cover"
     />
   </div>
-  <div class="flex flex-col px-10 py-10 gap-8">
-    <BtnRetour
-      texte="HOME"
-      lien="/"
-    />
-  </div>
 
-  <div class="flex justify-center items-center">
-    <div class="flex flex-col w-full max-w-5xl">
-      <div class="flex absolute justify-end bottom-[35vh] right-15">
-        <div class="flex flex-col bg-white w-sm p-4 gap-4">
-          <h1>{post.data.titre}</h1>
-          <div class="flex flex-wrap gap-2">
-            {
-              post.data.tags.map((t) => (
-                <span class="uppercase tracking-widest text-[10px] px-3 py-1.5 border-1 border-red rounded-full inline-flex items-center justify-center font-medium">
-                  {t}
-                </span>
-              ))
-            }
-          </div>
-          <p>{new Date(post.data.date).getFullYear()}</p>
-        </div>
-      </div>
+  <header
+    class="relative h-[80vh] w-full px-5 py-10 flex flex-col justify-between items-start pointer-events-none"
+  >
+    <div class="pointer-events-auto">
+      <BtnRetour
+        texte="HOME"
+        lien="/"
+      />
     </div>
-  </div>
-  <div
-    class="w-full bg-white flex flex-col gap-12 items-center justify-center mt-[55vh] px-10 py-10 pb-30 overflow-hidden"
+
+    <div
+      class="w-full self-center sm:self-end sm:mb-5 sm:mr-15 sm:w-sm bg-white p-4 gap-4 flex flex-col pointer-events-auto shadow-xl"
+    >
+      <h1>{post.data.titre}</h1>
+      <div class="flex flex-wrap gap-2">
+        {
+          post.data.tags.map((t) => (
+            <span class="uppercase tracking-widest text-[10px] px-3 py-1.5 border-1 border-red rounded-full inline-flex items-center justify-center font-medium">
+              {t}
+            </span>
+          ))
+        }
+      </div>
+      <p>{new Date(post.data.date).getFullYear()}</p>
+    </div>
+  </header>
+
+  <main
+    class="w-full bg-white flex flex-col gap-12 items-center justify-center mt-[2vh] px-10 py-5 pb-30 overflow-hidden"
   >
     <Content />
-  </div>
+  </main>
   <CardProjet
     variant="next"
     titre={nextProjet.data.titre}
