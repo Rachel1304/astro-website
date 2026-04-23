@@ -97,29 +97,85 @@ import SpecimenCatharePage19 from "../../assets/Projets/SpecimenCathare/Cathare-
   
 </div>
 
-<div class="flex flex-wrap w-full mb-8 gap-4">
+<div class="flex w-full flex-col items-center justify-center gap-4">
+  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-6xl mx-auto">
+   <div class="w-full h-full">
+      <Image 
+        src={SpecimenCathare2} 
+        alt="Specimen 2" 
+        class="reveal w-full h-full object-cover shadow-lg block" 
+      />
+    </div>
+    <div class="w-full h-full">
+      <Image 
+        src={SpecimenCathare3} 
+        alt="Specimen 3" 
+        class="reveal w-full h-full object-cover shadow-lg block" 
+      />
+    </div>
+    </div>
+  <div class="flex flex-wrap items-center justify-center gap-4 max-w-6xl mx-auto ">
+    <div class="flex flex-wrap items-stretch justify-center gap-4 w-full max-w-6xl mx-auto px-12">
   
-  <div class="flex-1 min-w-[300px] h-[30vh] md:h-[30vh] overflow-hidden">
-    <Image src={SpecimenCathare2} alt="Double page du spécimen Cathare" class="w-full h-full object-cover shadow-lg" />
+  <div class="flex-1 min-w-[250px] max-w-[45%] flex">
+    <Image 
+      src={SpecimenCatharePage15} 
+      alt="Page 15" 
+      class="reveal w-full h-full object-cover shadow-lg" 
+    />
   </div>
 
-  <div class="flex-1 md:flex-2 min-w-[300px] h-[30vh] md:h-[30vh] overflow-hidden">
-    <Image src={SpecimenCathare3} alt="Double page du spécimen Cathare" class="w-full h-full object-cover shadow-lg" />
+  <div class="flex-1 min-w-[250px] max-w-[45%] flex">
+    <Image 
+      src={SpecimenCatharePage16} 
+      alt="Page 16" 
+      class="reveal w-full h-full object-cover shadow-lg" 
+    />
   </div>
 
-  <div class="flex-1 min-w-[300px] h-[30vh] md:h-[30vh] overflow-hidden">
-    <Image src={SpecimenCatharePage15} alt="Page du spécimen Cathare" class="w-full h-full object-cover shadow-lg" />
-  </div>
-
-  <div class="flex-1 md:flex-2 min-w-[300px] h-[30vh] md:h-[30vh] overflow-hidden">
-    <Image src={SpecimenCatharePage16} alt="Page du spécimen Cathare" class="w-full h-full object-cover shadow-lg" />
-  </div>
-  
-  <div class="flex-1 md:flex-2 min-w-[300px] h-[30vh] md:h-[30vh] overflow-hidden">
-    <Image src={SpecimenCatharePage18} alt="Page du spécimen Cathare" class="w-full h-full object-cover shadow-lg" />
-  </div>
-
-  <div class="flex-1 min-w-[300px] h-[30vh] md:h-[30vh] overflow-hidden">
-    <Image src={SpecimenCatharePage19} alt="Page du spécimen Cathare" class="w-full h-full object-cover shadow-lg" />
+</div>
+ <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-6xl mx-auto">
+   <div class="w-full h-full">
+      <Image 
+        src={SpecimenCatharePage18} 
+        alt="Specimen 2" 
+        class="reveal w-full h-full object-cover shadow-lg block" 
+      />
+    </div>
+    <div class="w-full h-full">
+      <Image 
+        src={SpecimenCatharePage19} 
+        alt="Specimen 3" 
+        class="reveal w-full h-full object-cover shadow-lg block" 
+      />
+    </div>
+    </div>
+    {/* <Image src={SpecimenCatharePage18} alt="Page du spécimen Cathare" class="reveal w-full sm:w-[calc(40%-1rem)] h-auto object-contain shadow-lg" />
+    <Image src={SpecimenCatharePage19} alt="Page du spécimen Cathare" class="reveal w-full sm:w-[calc(40%-1rem)] h-auto object-contain shadow-lg" /> */}
   </div>
 </div>
+
+
+<script>
+  {`
+    // apparition après 20% de visibilité
+  const observerOptions = {
+  root: null,      // Par défaut : le viewport (l'écran)
+  threshold: 0.2   // 0.2 équivaut à 20%
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// On lance l'observation sur tes images
+document.querySelectorAll('.reveal').forEach(img => {
+  observer.observe(img);
+});
+  `}
+</script>

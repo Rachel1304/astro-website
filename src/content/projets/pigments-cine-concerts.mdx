@@ -84,23 +84,49 @@ import plancheLogo from "../../assets/Projets/PigmentsCineConcerts/Pigments_Plan
   </div>
 </div>
 
-<div class="flex flex-wrap w-full mb-8 gap-4 items-start">
-  
-  <div class="flex-1 md:flex-2 min-w-[300px]">
-    <Image 
-      src={plancheLogo} 
-      alt="Logotypes" 
-      class="w-full h-auto object-contain" 
-    />
-  </div>
-  
-  <div class="flex-1 min-w-[300px]">
-    <Image 
-      src={affiche3} 
-      alt="Affiche en situation" 
-      class="w-full h-auto shadow-lg object-contain" 
-    />
-  </div>
 
-
+<div class="flex w-full flex-col items-center justify-center">
+  <div class="flex gap-2 w-full max-w-6xl mx-auto items-stretch p-10">
+   
+    <div class="flex-1 w-fit h-[400px] md:h-[600px]  flex items-center justify-center overflow-hidden">
+      <Image 
+        src={affiche3} 
+        alt="Affiche en situation" 
+        class="reveal w-full h-full object-contain block" 
+      />
+    </div>
+    <div class="flex-2 w-full h-[400px] md:h-[600px]  bg-white  flex items-center justify-center overflow-hidden">
+      <Image 
+        src={plancheLogo} 
+        alt="Logotypes" 
+        class="reveal max-w-full max-h-full object-contain block" 
+      />
+    </div>
+  </div>
 </div>
+
+
+
+<script>
+  {`
+    // apparition après 20% de visibilité
+  const observerOptions = {
+  root: null,      // Par défaut : le viewport (l'écran)
+  threshold: 0.2   // 0.2 équivaut à 20%
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('active');
+      observer.unobserve(entry.target);
+    }
+  });
+}, observerOptions);
+
+// On lance l'observation sur tes images
+document.querySelectorAll('.reveal').forEach(img => {
+  observer.observe(img);
+});
+  `}
+</script>

@@ -18,18 +18,30 @@ const triProjets = [...projets].sort((a, b) => {
 <div class="flex flex-col gap-40 mt-8">
   {
     triProjets.map((projet, i) => {
-      // 2. LOGIQUE DE COULEUR FORCÉE
+      // 1. On définit si c'est une carte paire si oui, elle est blanche par défaut -> c'est pour l'affiche des cards dans la page projets
       const isWhiteCard = i % 2 === 0
-      const finalBgColor = isWhiteCard
-        ? 'var(--color-white)'
-        : projet.data.bgColor
-      const finalForeground = isWhiteCard
+
+      // 2. Exception à la règle
+      // On vérifie si c'est le projet Cap Cathare
+      const isCapCathare = projet.id === 'cap-cathare'
+
+      // Si c'est Cap Cathare, on prend SA couleur du MDX, sinon on suit la règle paire/impaire
+      const finalBgColor = isCapCathare
+        ? projet.data.bgColor
+        : isWhiteCard
+          ? 'var(--color-white)'
+          : projet.data.bgColor
+
+      // Pour le texte : Si c'est Cap Cathare, on FORCE le noir, sinon règle habituelle
+      const finalForeground = isCapCathare
         ? 'var(--color-black)'
-        : 'var(--color-white)'
+        : isWhiteCard
+          ? 'var(--color-black)'
+          : 'var(--color-white)'
 
       return (
         <div
-          class="sticky top-[20vh] w-full"
+          class="sticky top-[20vh] sm:top-[10vh] w-full"
           style={`z-index: ${i + 1};`}
         >
           <CardProjet

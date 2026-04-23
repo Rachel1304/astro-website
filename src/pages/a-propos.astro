@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro'
 import { Image } from 'astro:assets'
 import PhotoRachelBastie from '../assets/PhotoPortrait_RachelBastie_2025.png'
-import Grille from '../components/grille.astro'
+import Grille from '../components/Grille.astro'
 import SceauCire from '../assets/SceauCirePenséeSauvage-FondTransparent.png'
 import LogoIllustrator from '../assets/LogoLogiciels/LogoIllustrator.svg'
 import LogoIndesign from '../assets/LogoLogiciels/LogoIndesign.svg'
@@ -75,14 +75,15 @@ import ParcoursDate from '../components/ParcoursDate.astro'
             </p>
             <div class="flex flex-row items-end justify-end gap-4 py-4">
               <a
-                href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
-                download="PortfolioNumerique_BASTIE_Rachel.pdf"
+                href="/CV_BASTIE_Rachel_DesignerGraphique.pdf"
+                download="CV_BASTIE_Rachel_DesignerGraphique.pdf"
                 class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
                 ><strong>CV</strong></a
               >
               <a
-                href="/public/PortfolioNumerique_BASTIE_Rachel.pdf"
+                href="/PortfolioNumérique_BASTIE_Rachel.pdf"
                 download="PortfolioNumerique_BASTIE_Rachel.pdf"
+                target="_blank"
                 class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
                 ><strong>Portfolio</strong></a
               >
@@ -235,7 +236,7 @@ import ParcoursDate from '../components/ParcoursDate.astro'
           matières vivantes. Je ne crée pas seulement des interfaces, je conçois
           des objets numériques tactiles.
         </p><div
-          class="absolute -bottom-0 -right-4 md:right-50 md:bottom-2 w-32 sm:w-36 md:w-40 rotate-[-15deg] pointer-events-none"
+          class="absolute -bottom-0 -right-4 md:right-10 lg:right-50 md:bottom-2 w-32 sm:w-36 md:w-40 rotate-[-15deg] pointer-events-none"
         >
           <Image
             src={SceauCire}
@@ -244,12 +245,12 @@ import ParcoursDate from '../components/ParcoursDate.astro'
           />
         </div>
         <div
-          class="absolute -bottom-8 -right-24 sm:-bottom-4 sm:-right-18 md:right-10 md:bottom-4"
+          class="absolute -bottom-8 -right-24 sm:-bottom-4 sm:-right-18 md:-right-10 lg:-right-15 md:bottom-4 lg:-bottom-15"
         >
           <Image
             src={Pencil}
             alt="Crayon à papier"
-            class="flex w-64 -rotate-150"
+            class="flex w-64 -rotate-150 lg:w-80 lg:-rotate-128"
           />
         </div>
       </div>
@@ -303,7 +304,7 @@ import ParcoursDate from '../components/ParcoursDate.astro'
           alt="Lot d'animaux en perles"
           class="hidden sm:block sm:absolute w-100 z-3"
         />
-        <div class="absolute -right-10 sm:-right-5 top-10">
+        <div class="absolute -right-10 sm:-right-5 top-10 opacity-50">
           <Grille size="medium" />
         </div>
       </div>

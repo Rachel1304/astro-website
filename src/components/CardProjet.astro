@@ -32,7 +32,9 @@ const isNextProject = Astro.props.variant === 'next'
   class="flex w-full justify-center"
   style={`background-color: ${Astro.props.bgColor};`}
 >
-  <div class="group flex flex-col px-8 py-10 gap-8 md:max-w-3xl">
+  <div
+    class="group flex flex-col px-8 py-10 sm:px-12 sm:py-18 gap-8 md:max-w-3xl"
+  >
     {
       isNextProject && (
         <div class="flex flex-row gap-6 items-center group-hover:translate-x-2 transition-all ease-in-out">
@@ -44,7 +46,9 @@ const isNextProject = Astro.props.variant === 'next'
         </div>
       )
     }
-    <div class="flex w-full gap-4 h-[35vh] md:max-h-[40vh] lg:h-[60vh]">
+    <div
+      class="flex w-full gap-4 h-[35vh] sm:h-[50vh] md:max-h-[50vh] lg:h-[60vh]"
+    >
       <div class="flex-2 min-w-0 overflow-hidden">
         <Image
           src={Astro.props.cover1.src}
