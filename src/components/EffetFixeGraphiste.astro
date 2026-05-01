@@ -74,22 +74,30 @@ const projets = await getCollection('projets')
     const ratioTitre = Math.min(Math.max(scrollY / 400, 0), 1)
     // Configuration par support
     let config = {
-      moveUp: -150, // Desktop par défaut
+      moveUp: -200, // Desktop par défaut
       scaleDivisor: 0.4,
     }
-    if (width < 768) {
+    if (width < 640) {
+      // --- MOBILE Petit ---
+      config.moveUp = -320
+      config.scaleDivisor = 0.3
+    } else if (width >= 640 && width < 768) {
       // --- MOBILE ---
-      config.moveUp = -230
-      config.scaleDivisor = 0.35
-    } else if (width >= 768 && width <= 1024) {
+      config.moveUp = -310
+      config.scaleDivisor = 0.3
+    } else if (width >= 768 && width < 1024) {
       // --- TABLETTE ---
       // Ici on ajuste pour que ça rentre bien dans l'espace tablette
-      config.moveUp = -200
+      config.moveUp = -280
       config.scaleDivisor = 0.5
-    } else {
-      // --- DESKTOP (Large) ---
-      config.moveUp = -210
+    } else if (width >= 1024 && width < 1280) {
+      // --- DESKTOP ---
+      config.moveUp = -280
       config.scaleDivisor = 0.45
+    } else if (width >= 1280) {
+      // Desktop (large)
+      config.moveUp = -300
+      config.scaleDivisor = 0.4
     }
 
     if (titre) {
