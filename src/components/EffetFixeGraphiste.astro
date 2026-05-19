@@ -79,24 +79,24 @@ const projets = await getCollection('projets')
     }
     if (width < 640) {
       // --- MOBILE Petit ---
-      config.moveUp = -320
+      config.moveUp = -210
       config.scaleDivisor = 0.3
     } else if (width >= 640 && width < 768) {
       // --- MOBILE ---
-      config.moveUp = -310
-      config.scaleDivisor = 0.3
+      config.moveUp = -210
+      config.scaleDivisor = 0.2
     } else if (width >= 768 && width < 1024) {
       // --- TABLETTE ---
       // Ici on ajuste pour que ça rentre bien dans l'espace tablette
-      config.moveUp = -280
+      config.moveUp = -180
       config.scaleDivisor = 0.5
     } else if (width >= 1024 && width < 1280) {
       // --- DESKTOP ---
-      config.moveUp = -280
+      config.moveUp = -180
       config.scaleDivisor = 0.45
     } else if (width >= 1280) {
       // Desktop (large)
-      config.moveUp = -300
+      config.moveUp = -180
       config.scaleDivisor = 0.4
     }
 
