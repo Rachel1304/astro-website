@@ -26,6 +26,13 @@ import { Image } from 'astro:assets';
 import rapportCover from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_02.png";
 import rapportDetail1 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_03.png"
 import rapportDetail2 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_04.png"
+import rapportDetail3 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage.png"
+import rapportDetail4 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage_02.png"
+import rapportDetail5 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage___24-25.png"
+import rapportDetail6 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage___18-19.png"
+import rapportDetail7 from "../../assets/Projets/RapportDeStagePICT/PICT_RapportDeStage___30-31.png"
+import rapportExperience1 from "../../assets/Projets/RapportDeStagePICT/PICT_ExperienceStage__01.png"
+import rapportExperience2 from "../../assets/Projets/RapportDeStagePICT/PICT_ExperienceStage__02.png"
 
 
 
@@ -66,7 +73,7 @@ import rapportDetail2 from "../../assets/Projets/RapportDeStagePICT/PICT_Rapport
 
     </div>
   </div>
-  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+<div class="w-full overflow-hidden h-auto md:h-[40vh]">
   <div class="flex flex-col md:flex-row gap-4 h-full">
     <div class="w-full md:w-1/2 h-[30vh] md:h-full">
       <Image src={rapportDetail1} alt="Double page du rapport" class="w-full h-full object-cover shadow-lg" />
@@ -76,6 +83,17 @@ import rapportDetail2 from "../../assets/Projets/RapportDeStagePICT/PICT_Rapport
     </div>
   </div>
 </div>
+<div class="w-full overflow-hidden h-auto md:h-[40vh]">
+  <div class="flex flex-col md:flex-row gap-4 h-full">
+    <div class="w-full h-[40vh] md:h-full">
+      <Image src={rapportDetail3} alt="Double page du rapport" class="w-full h-full object-cover shadow-lg" />
+    </div>
+  </div>
+</div>
+ 
+
+
+
     <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
       <h2 class="mt-0">Procédé</h2>
@@ -90,5 +108,26 @@ import rapportDetail2 from "../../assets/Projets/RapportDeStagePICT/PICT_Rapport
 
       Le résultat est un ouvrage d'**impression livre** qui documente mon évolution en tant que webdesigner et DA.
     </div>
+  </div>
+ 
+
+
+
+   <div class="flex flex-wrap w-full gap-6 items-start justify-center">
+      <div class="h-[25vh] w-auto">
+        <Image src={rapportExperience1} alt="" class="w-full h-full object-contain block shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+       <Image src={rapportExperience2} alt="" class="w-full h-full object-contain block shadow-lg"/>
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={rapportDetail5} alt="" class="w-full h-full object-contain block shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+       <Image src={rapportDetail6} alt="" class="w-full h-full object-contain block shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={rapportDetail7} alt="" class="w-full h-full object-contain block shadow-lg"/>
+      </div>
   </div>
 </div>

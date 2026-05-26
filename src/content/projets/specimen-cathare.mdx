@@ -51,7 +51,7 @@ import SpecimenCatharePage19 from "../../assets/Projets/SpecimenCathare/Cathare-
       <p class="subtitle-da">Un équilibre entre rigueur et douceur</p>
     </div>
     <div class="flex flex-col flex-3">
-      L'intention première était de trouver une posture d'adulte bienveillant : un ton qui raconte sans faire peur[cite: 24, 81]. Les enjeux techniques étaient :
+      L'intention première était de trouver une posture d'adulte bienveillant : un ton qui raconte sans faire peur. Les enjeux techniques étaient :
       <ul class="list-disc ml-6 my-4">
         <li>Incarner la **verticalité et la droiture** morale des Cathares.</li>
         <li>Assurer un **gris typographique** régulier pour une lecture enfantine fluide.</li>
@@ -94,88 +94,28 @@ import SpecimenCatharePage19 from "../../assets/Projets/SpecimenCathare/Cathare-
       Le résultat est une typographie de médiation qui transforme la gravité du sujet en un récit abordable pour les jeunes esprits.
     </div>
   </div>
+
+   <div class="flex flex-wrap w-full gap-6 items-start justify-center">
+      <div class="h-[25vh] w-auto">
+        <Image src={SpecimenCathare2} alt="Specimen 2" class="w-full h-full object-contain block shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+       <Image src={SpecimenCathare3} alt="Specimen 3" class="w-full h-full object-contain block shadow-lg"/>
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={SpecimenCatharePage15} alt="Specimen page 15" class="w-full h-full object-contain block shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+       <Image src={SpecimenCatharePage16} alt="Specimen page 16" class="w-full h-full object-contain block shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={SpecimenCatharePage18} alt="Specimen page 18" class="w-full h-full object-contain block shadow-lg"/>
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={SpecimenCatharePage19} alt="Specimen page 19" class="w-full h-full object-contain block shadow-lg"/>
+      </div>
+  </div>
   
 </div>
 
-<div class="flex w-full flex-col items-center justify-center gap-4">
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-6xl mx-auto">
-   <div class="w-full h-full">
-      <Image 
-        src={SpecimenCathare2} 
-        alt="Specimen 2" 
-        class="reveal w-full h-full object-cover shadow-lg block" 
-      />
-    </div>
-    <div class="w-full h-full">
-      <Image 
-        src={SpecimenCathare3} 
-        alt="Specimen 3" 
-        class="reveal w-full h-full object-cover shadow-lg block" 
-      />
-    </div>
-    </div>
-  <div class="flex flex-wrap items-center justify-center gap-4 max-w-6xl mx-auto ">
-    <div class="flex flex-wrap items-stretch justify-center gap-4 w-full max-w-6xl mx-auto px-12">
-  
-  <div class="flex-1 min-w-[250px] max-w-[45%] flex">
-    <Image 
-      src={SpecimenCatharePage15} 
-      alt="Page 15" 
-      class="reveal w-full h-full object-cover shadow-lg" 
-    />
-  </div>
 
-  <div class="flex-1 min-w-[250px] max-w-[45%] flex">
-    <Image 
-      src={SpecimenCatharePage16} 
-      alt="Page 16" 
-      class="reveal w-full h-full object-cover shadow-lg" 
-    />
-  </div>
-
-</div>
- <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 w-full max-w-6xl mx-auto">
-   <div class="w-full h-full">
-      <Image 
-        src={SpecimenCatharePage18} 
-        alt="Specimen 2" 
-        class="reveal w-full h-full object-cover shadow-lg block" 
-      />
-    </div>
-    <div class="w-full h-full">
-      <Image 
-        src={SpecimenCatharePage19} 
-        alt="Specimen 3" 
-        class="reveal w-full h-full object-cover shadow-lg block" 
-      />
-    </div>
-    </div>
-    {/* <Image src={SpecimenCatharePage18} alt="Page du spécimen Cathare" class="reveal w-full sm:w-[calc(40%-1rem)] h-auto object-contain shadow-lg" />
-    <Image src={SpecimenCatharePage19} alt="Page du spécimen Cathare" class="reveal w-full sm:w-[calc(40%-1rem)] h-auto object-contain shadow-lg" /> */}
-  </div>
-</div>
-
-
-<script>
-  {`
-    // apparition après 20% de visibilité
-  const observerOptions = {
-  root: null,      // Par défaut : le viewport (l'écran)
-  threshold: 0.2   // 0.2 équivaut à 20%
-};
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('active');
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-// On lance l'observation sur tes images
-document.querySelectorAll('.reveal').forEach(img => {
-  observer.observe(img);
-});
-  `}
-</script>

@@ -29,6 +29,10 @@ coverLogo: {
 import { Image } from 'astro:assets';
 import RapportLarac02 from "../../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Mockup02.png"
 import RapportLarac03 from "../../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Mockup03.png"
+import RapportLaracPhotoMe from "../../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Photo_3.png"
+import RapportLaracPhotoLieu01 from "../../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Photo_2.png"
+import RapportLaracPhotoLieu02 from "../../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Photo_4.png"
+import RapportLaracPhotoLieu03 from "../../assets/Projets/RapportDeStageLARACH/Larach_RapportDeStage_Photo_7.png"
 
 <div class="flex flex-col gap-20 w-full max-w-6xl items-center justify-center">
 <h1 class="sr-only">Expérience de Stage : Maison Larac</h1>
@@ -55,7 +59,7 @@ import RapportLarac03 from "../../assets/Projets/RapportDeStageLARACH/Larach_Rap
 
     </div>
   </div>
-  <div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
+<div class="w-full mb-8 overflow-hidden h-auto md:h-[40vh]">
   <div class="flex flex-col md:flex-row gap-4 h-full">
     <div class="w-full md:w-1/2 h-[30vh] md:h-full">
       <Image src={RapportLarac02} alt="Détail 01" class="w-full h-full object-cover shadow-lg" />
@@ -65,7 +69,8 @@ import RapportLarac03 from "../../assets/Projets/RapportDeStageLARACH/Larach_Rap
     </div>
   </div>
 </div>
-    <div class="flex flex-col md:flex-row gap-6">
+
+  <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
       <h2 class="mt-0">Procédé</h2>
     </div>
@@ -79,5 +84,24 @@ import RapportLarac03 from "../../assets/Projets/RapportDeStageLARACH/Larach_Rap
       Le stage se présente comme un parcours complet qui lie la créativité pure, les contraintes de fabrication et la stratégie de marque sur le territoire toulousain.
     </div>
   </div>
+
+  <div class="flex flex-col w-full gap-6 h-auto md:h-[60vh] items-center">
+    <div class="flex w-full gap-6 h-auto md:h-[30vh]">
+      <div class="w-full md:w-1/3 h-[30vh] md:h-full">
+        <Image src={RapportLaracPhotoLieu03} alt="Détail 02" class="w-full h-full object-cover shadow-lg" />
+     </div>
+     <div class="w-full md:w-1/3 h-[30vh] md:h-full">
+       <Image src={RapportLaracPhotoMe} alt="Détail 02" class="w-full h-full object-cover shadow-lg" />
+     </div>
+     <div class="w-full md:w-1/3 h-[30vh] md:h-full">
+       <Image src={RapportLaracPhotoLieu02} alt="Détail 02" class="w-full h-full object-cover shadow-lg" />
+      </div>
+    </div>
+
+    <div class="h-[30vh] w-full">
+      <Image src={RapportLaracPhotoLieu01} alt="Détail 02" class="w-full h-full object-cover shadow-lg" style={{ objectPosition: '50% 60%' }} />
+    </div>
+  </div>
+  
 </div>
 

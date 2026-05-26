@@ -26,10 +26,16 @@ import { Image } from 'astro:assets';
 import vistaCover from "../../assets/Projets/SpecimenVista/SpecimenVista_05.png";
 import vistaDetail1 from "../../assets/Projets/SpecimenVista/SpecimenVista_02.png"
 import vistaDetail2 from "../../assets/Projets/SpecimenVista/SpecimenVista_06.png"
+import vistaDetail3 from "../../assets/Projets/SpecimenVista/SpecimenVista_03.png"
+import vistaDetail4 from "../../assets/Projets/SpecimenVista/SpecimenVista_page___06-07.png"
+import vistaDetail5 from "../../assets/Projets/SpecimenVista/SpecimenVista_page___10-11.png"
+import vistaDetail6 from "../../assets/Projets/SpecimenVista/SpecimenVista_page___16-17.png"
+import vistaDetail7 from "../../assets/Projets/SpecimenVista/SpecimenVista_page___14-15.png"
+import vistaDetail8 from "../../assets/Projets/SpecimenVista/SpecimenVista_page___24-25.png"
 
 
 
-<div class="flex flex-col gap-20 w-full max-w-6xl items-center justify-center">
+<div class="flex flex-col gap-20 w-full max-w-6xl justify-center">
 <h1 class="sr-only">Spécimen Vista — Sans & Slab</h1>
   <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
@@ -69,6 +75,7 @@ import vistaDetail2 from "../../assets/Projets/SpecimenVista/SpecimenVista_06.pn
       <Image src={vistaDetail2} alt="Double page du spécimen Vista - Détail technique typographique" class="w-full h-full object-cover" />
     </div>
   </div>
+  
 </div>
     <div class="flex flex-col md:flex-row gap-6">
     <div class="flex flex-col md:w-56 shrink-0 flex-2">
@@ -82,6 +89,33 @@ import vistaDetail2 from "../../assets/Projets/SpecimenVista/SpecimenVista_06.pn
       3. **Expérimentation Graphique :** Jeu sur les contrastes entre la sobriété du gris typo et des compositions plus dynamiques, illustrant la polyvalence de la Vista pour des usages contemporains variés.
 
       Le résultat est un objet éditorial qui célèbre une famille typographique où chaque glyphe raconte une histoire entre Sumatra et New York.
+    </div>
+  </div>
+
+  <div class="flex flex-col w-full gap-6 h-auto md:h-auto items-center">
+    <div class="flex w-full gap-6 h-auto md:h-[20vh]">
+      <div class="w-full md:w-1/2 h-[20vh] md:h-full">
+        <Image src={vistaDetail3} alt="Double page du spécimen Vista - Lettrage et axe" class="w-full h-full object-cover" />
+     </div>
+     <div class="w-full md:w-1/2 h-[20vh] md:h-full">
+       <Image src={vistaDetail4} alt="Double page du spécimen Vista - La Fonderie explication" class="w-full h-full object-cover shadow-lg" style={{ objectPosition: '0% 50%' }} />
+     </div>
+    </div>
+   <div class="flex w-full gap-6 h-auto">
+      <div class="h-auto w-auto">
+        <Image src={vistaDetail5} alt="Double page du spécimen Vista - Histoire de la typographie Vista" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="h-auto w-auto">
+        <Image src={vistaDetail6} alt="Double page du spécimen Vista - Styles de la typographie" class="w-full h-full object-cover shadow-lg" />
+      </div>
+    </div>
+       <div class="flex w-full gap-6 h-auto">
+      <div class="h-auto w-auto">
+        <Image src={vistaDetail7} alt="Double page du spécimen Vista - Les styles de la typographie" class="w-full h-full object-cover shadow-lg"/>
+      </div>
+      <div class="h-auto w-auto">
+        <Image src={vistaDetail8} alt="Double page du spécimen Vista - Hiérarchisations possibles" class="w-full h-full object-cover shadow-lg" />
+      </div>
     </div>
   </div>
 </div>

@@ -26,6 +26,15 @@ import { Image } from 'astro:assets';
 import menuRestaurant from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_MenuRestaurant.png";
 import modeEmploi from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_1.png"
 import supportInnovant from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_SupportInnovant.png"
+import kitReparationOuvert from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_KitDeReparation.png"
+import modeEmploi01 from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_2.png"
+import modeEmploi02 from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_3.png"
+import kitReparationFerme from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_ModeEmploi_Boite.png"
+import charteGraphique from "../../assets/Projets/LeVeloSentimental/LeVeloSentimental_CharteGraphique.png"
+import menu01 from "../../assets/Projets/LeVeloSentimental/Menu_01-02.png"
+import menu02 from "../../assets/Projets/LeVeloSentimental/Menu_03-04.png"
+import menu03 from "../../assets/Projets/LeVeloSentimental/Menu_05-06.png"
+import menu04 from "../../assets/Projets/LeVeloSentimental/Menu_15-16.png"
 
 
 <div class="flex flex-col gap-20 w-full max-w-6xl items-center justify-center">
@@ -51,10 +60,10 @@ import supportInnovant from "../../assets/Projets/LeVeloSentimental/LeVeloSentim
       <p class="subtitle-da">Refonte de l'identité et supports</p>
     </div>
     <div class="flex flex-col flex-3">
-      L’intention était de refondre intégralement la **direction artistique** du lieu. Ce travail s'accompagne d'un explicatif argumenté détaillant chaque étape :
+      L’intention était de refondre intégralement la **direction artistique** du lieu. Ce travail s'accompagne d'un explicatif argumenté détaillant chaque étape:
       <ul class="list-disc ml-6 my-4">
        <li>Création d’un **logotype** et de ses déclinaisons.</li>
-       <li>Conception des **supports de communication** (menus, kits).</li>
+       <li>Conception des **supports de communication**: menus, kits.</li>
        <li>Mise en avant des spécificités techniques et culinaires de l'établissement.</li>
       </ul>
 
@@ -85,4 +94,41 @@ import supportInnovant from "../../assets/Projets/LeVeloSentimental/LeVeloSentim
       Le résultat final est une identité chaleureuse et fonctionnelle, faisant le pont entre l'art de vivre et la technicité du vélo.
     </div>
   </div>
-</div>
+  </div>
+
+
+
+    <div class="flex flex-wrap w-full gap-6 items-start justify-center">
+      <div class="h-[25vh] w-auto">
+        <Image src={kitReparationOuvert} alt="Photo de la boite du kit de réparation ouverte" class="w-full h-full object-cover shadow-lg" />
+      </div>
+      <div class="h-[25vh] w-auto">
+       <Image src={kitReparationFerme} alt="Photo du dessus de la boite du kit de réparation" class="w-full h-full object-cover shadow-lg"/>
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={charteGraphique} alt="Charte graphique" class="w-[200px] h-full object-cover shadow-lg style={{ objectPosition: '50% 50%' }}" />
+      </div>
+      <div class="h-[25vh] w-auto">
+       <Image src={modeEmploi01} alt="Page des instructions du kit de répérations crevaisons" class="w-[200px] h-full object-cover shadow-lg" style={{ objectPosition: '50% 50%' }} />
+      </div>
+      <div class="h-[25vh] w-auto">
+        <Image src={modeEmploi02} alt="Plusieurs pages des instructions du kit de répérations crevaisons" class="w-full h-full object-cover shadow-lg"/>
+      </div>
+    <div class="h-[30vh] w-auto">
+      <Image src={menu01} alt="Page du menu de la carte du restaurant" class="w-full h-full object-cover shadow-lg"/>
+    </div>
+    <div class="h-[30vh] w-auto">
+      <Image src={menu02} alt="Page du menu de la carte du restaurant" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="h-[30vh] w-auto">
+      <Image src={menu03} alt="Page du menu de la carte du restaurant" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="h-[30vh] w-auto">
+      <Image src={menu04} alt="Page du menu de la carte du restaurant" class="w-full h-full object-cover shadow-lg" />
+    </div>
+    <div class="h-[30vh] w-auto">
+      <Image src={menuRestaurant} alt="Carte du restaurant" class="w-full h-full object-cover shadow-lg"/>
+    </div>
+  </div>
+<div/>
+
