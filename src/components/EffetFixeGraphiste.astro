@@ -6,8 +6,9 @@ const projets = await getCollection('projets')
 ---
 
 ---
+
 <div
-  class="h-[90vh] w-full flex items-center justify-center sticky top-0 -z-10 pb-20 md:pb-30"
+  class="sticky top-0 left-0 w-full h-screen flex flex-col items-center justify-center -z-10 pb-20 md:pb-30"
 >
   <div
     id="titreGraphiste"
@@ -16,48 +17,40 @@ const projets = await getCollection('projets')
     <p class="text-sm md:text-base mb-2">Web & print</p>
     <h1 class="text-6xl md:text-8xl leading-none">Graphiste</h1>
   </div>
-</div>
 
-<div class="flex flex-col h-[80vh] w-full items-center justify-center">
   <div
     id="accroche"
-    class="absolute bottom-50 flex transition-all duration-500 ease-in-out items-center justify-center w-50 md:w-120"
+    class="mt-12 flex transition-all duration-500 ease-in-out items-center justify-center w-50 md:w-120"
   >
     <p class="text-center text-xl">
       « <strong>J’aime</strong> essayer, tester et fabriquer. »
     </p>
   </div>
-  <div class="flex gap-4 fixed bottom-15 z-29">
-    <a
-      href="/PortfolioNumérique_BASTIE_Rachel.pdf"
-      download="PortfolioNumerique_BASTIE_Rachel.pdf"
-      target="_blank"
-      class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
-      ><strong>Portfolio</strong></a
-    >
-    <!-- <a
-      href="/src/pages/contact"
-      target="_self"
-      class="flex items-center justify-center bg-white border-2 rounded-full px-6 py-2 md:px-4 md:py-2"
-      ><strong>Contact</strong></a
-    > -->
-    <button
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      class="flex items-center justify-center cursor-pointer bg-[var(--color-red)] w-12 md:w-12 border-2 border-[var(--color-white)] rounded-full"
-      aria-label="Remonter en haut"
-    >
-      <div class="-rotate-90">
-        <Arrow
-          foreground="var(--color-white)"
-          size="medium"
-        />
-      </div>
-    </button>
-  </div>
+</div>
+
+<div class="flex gap-4 fixed bottom-15 left-1/2 -translate-x-1/2 z-30">
+  <a
+    href="/PortfolioNumérique_BASTIE_Rachel.pdf"
+    download="PortfolioNumerique_BASTIE_Rachel.pdf"
+    target="_blank"
+    class="flex items-center justify-center bg-red text-white border-2 border-[var(--color-white)] rounded-full px-6 py-2"
+    ><strong>Portfolio</strong></a
+  >
+  <button
+    onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
+    class="flex items-center justify-center cursor-pointer bg-[var(--color-red)] w-12 md:w-12 border-2 border-[var(--color-white)] rounded-full"
+    aria-label="Remonter en haut"
+  >
+    <div class="-rotate-90">
+      <Arrow
+        foreground="var(--color-white)"
+        size="medium"
+      />
+    </div>
+  </button>
 </div>
 
 <script>
-  //On récupère l'élément
   const titre = document.getElementById('titreGraphiste')
   const accroche = document.getElementById('accroche')
 
@@ -72,36 +65,28 @@ const projets = await getCollection('projets')
     // Ce ratio reste à 0 tant que scrollY < 200
     // Si tu as mis pb-20 (80px), on réduit moveUp d'autant.
     const ratioTitre = Math.min(Math.max(scrollY / 400, 0), 1)
-    // Configuration par support
+
+    // Configuration par rapport à la LARGEUR (width)
     let config = {
-      moveUp: -200, // Desktop par défaut
+      moveUp: -200,
       scaleDivisor: 0.4,
     }
+
     if (width < 640) {
-      // --- MOBILE Petit ---
-      config.moveUp = -210
-      config.scaleDivisor = 0.3
+      config.moveUp = -250
+      config.scaleDivisor = 0.2
     } else if (width >= 640 && width < 768) {
-      // --- MOBILE ---
-      config.moveUp = -210
+      config.moveUp = -260
       config.scaleDivisor = 0.2
     } else if (width >= 768 && width < 1024) {
-      // --- TABLETTE ---
-      // Ici on ajuste pour que ça rentre bien dans l'espace tablette
-      config.moveUp = -180
-      config.scaleDivisor = 0.5
-    } else if (width >= 1024 && width < 1280) {
-      // --- DESKTOP ---
-      config.moveUp = -180
-      config.scaleDivisor = 0.45
-    } else if (width >= 1280 && width < 1600) {
-      // Desktop (large)
-      config.moveUp = -200
+      config.moveUp = -240
       config.scaleDivisor = 0.4
-    } else if (width >= 1600) {
-      // Desktop (large)
-      config.moveUp = -320
-      config.scaleDivisor = 0.2
+    } else if (width >= 1024 && width < 1440) {
+      config.moveUp = -240
+      config.scaleDivisor = 0.4
+    } else if (width >= 1440) {
+      config.moveUp = -250
+      config.scaleDivisor = 0.4
     }
 
     if (titre) {
@@ -113,14 +98,12 @@ const projets = await getCollection('projets')
     }
 
     if (accroche) {
-      //L'accroche disparaît progressivement
-      accroche.style.opacity = (1 - ratioAccroche * 2).toString() //Le 1.5 est la vitesse de disparition
-      //Optionnel: elle descend un peu en disparaissant
-      accroche.style.transform = `translateY(${ratioAccroche * 20}px)`
-      // On désactive les clics quand elle est invisible
-      accroche.style.pointerEvents = ratioAccroche === 1 ? 'none' : 'auto'
+      accroche.style.opacity = (1 - ratioAccroche * 1.5).toString()
+      accroche.style.transform = `translateY(${ratioAccroche * 30}px)`
+      accroche.style.pointerEvents = ratioAccroche >= 0.7 ? 'none' : 'auto'
     }
   }
+
   window.addEventListener('scroll', updateAnimation)
   // On lance une fois au chargement pour éviter un saut visuel si on refresh en milieu de page
   window.addEventListener('resize', updateAnimation)
