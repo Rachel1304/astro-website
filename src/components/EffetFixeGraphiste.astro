@@ -94,10 +94,14 @@ const projets = await getCollection('projets')
       // --- DESKTOP ---
       config.moveUp = -180
       config.scaleDivisor = 0.45
-    } else if (width >= 1280) {
+    } else if (width >= 1280 && width < 1600) {
       // Desktop (large)
-      config.moveUp = -180
+      config.moveUp = -200
       config.scaleDivisor = 0.4
+    } else if (width >= 1600) {
+      // Desktop (large)
+      config.moveUp = -320
+      config.scaleDivisor = 0.2
     }
 
     if (titre) {
