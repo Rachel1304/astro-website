@@ -2,7 +2,8 @@
 @font-face {
   font-family: 'Lora';
   src: url('/fonts/Lora-Regular.ttf') format('truetype');
-  font-weight: 400; /* Roman / Classique */
+  font-weight: 400;
+  /* Roman / Classique */
   font-style: normal;
   font-display: swap;
 }
@@ -52,14 +53,17 @@
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayLight.ttf') format('truetype');
-  font-weight: 300; /* Light */
+  font-weight: 300;
+  /* Light */
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayLightItalic.ttf') format('truetype');
-  font-weight: 300; /* Light */
+  font-weight: 300;
+  /* Light */
   font-style: italic;
   font-display: swap;
 }
@@ -67,28 +71,34 @@
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayRoman.ttf') format('truetype');
-  font-weight: 400; /* Roman / Classique */
+  font-weight: 400;
+  /* Roman / Classique */
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayRomanItalic.ttf') format('truetype');
-  font-weight: 400; /* Roman / Classique */
+  font-weight: 400;
+  /* Roman / Classique */
   font-style: italic;
   font-display: swap;
 }
 
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
-  src: url('/fonts/NeueHaasDisplayMedium.ttf') format('truetype'); /* Souvent utilisé pour SemiBold */
+  src: url('/fonts/NeueHaasDisplayMedium.ttf') format('truetype');
+  /* Souvent utilisé pour SemiBold */
   font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
-  src: url('/fonts/NeueHaasDisplayMediumItalic.ttf') format('truetype'); /* Souvent utilisé pour SemiBold */
+  src: url('/fonts/NeueHaasDisplayMediumItalic.ttf') format('truetype');
+  /* Souvent utilisé pour SemiBold */
   font-weight: 600;
   font-style: italic;
   font-display: swap;
@@ -101,6 +111,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Neue Haas Grotesk Display Pro';
   src: url('/fonts/NeueHaasDisplayBoldItalic.ttf') format('truetype');
@@ -125,93 +136,114 @@
 }
 
 @layer base {
-  h1{
+  h1 {
     @apply text-4xl font-lora font-bold italic break-words text-darkblue;
   }
-  h2{
+
+  h2 {
     @apply text-3xl font-lora text-red mb-0 mt-4 font-bold italic break-words;
   }
-  h3{
+
+  h3 {
     @apply text-xl font-neue-haas-grotesk-display-pro font-semibold text-darkblue mt-0 mb-0;
   }
-  h4{
+
+  h4 {
     @apply text-xl md:text-2xl text-red font-lora font-bold italic mb-5 mt-0 break-words;
   }
+
   h5 {
     @apply text-sm uppercase font-neue-haas-grotesk-display-pro font-semibold text-darkblue mb-5 mt-0 break-words;
   }
 
 
-  strong{
+  strong {
     @apply font-semibold font-neue-haas-grotesk-display-pro;
   }
 
-  p{
+  p {
     @apply text-base font-neue-haas-grotesk-display-pro font-normal mb-2 tracking-wider;
   }
-  
+
+  date {
+    @apply text-xs font-neue-haas-grotesk-display-pro font-semibold text-darkblue;
+  }
+
+  info {
+    @apply text-sm font-neue-haas-grotesk-display-pro font-light text-darkblue;
+  }
+
 
   a {
     @apply text-lg;
   }
 
-  h3 + p {
+  h3+p {
     @apply mt-0;
   }
 
-  h4:has(+ h5), 
+  h4:has(+ h5),
   h4:has(+ div h5) {
-  margin-bottom: 0 !important;
+    margin-bottom: 0 !important;
   }
 
   .subtitle-da {
-  font-weight: 600;
-  font-size: 1rem;
-  letter-spacing: 0.025em;
-  text-transform: uppercase; /* Optionnel : pour un look très pro */
-  color: var(--color-darkblue); 
-}
+    font-weight: 600;
+    font-size: 1rem;
+    letter-spacing: 0.025em;
+    text-transform: uppercase;
+    /* Optionnel : pour un look très pro */
+    color: var(--color-darkblue);
+  }
 
 
 
-.reveal {
-  opacity: 0;
-  transform: translateY(30px); /* Décalage vers le bas */
-  transition: all 0.8s ease-out; /* Animation fluide */
-}
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    /* Décalage vers le bas */
+    transition: all 0.8s ease-out;
+    /* Animation fluide */
+  }
 
-.reveal.active {
-  opacity: 1;
-  transform: translateY(0); /* Retour à la position normale */
-}
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+    /* Retour à la position normale */
+  }
 
-/* 1. On cible toutes les listes dans tes fichiers de contenu */
-ul {
-  list-style-type: disc !important; /* Force les points */
-  margin-left: 1.5rem !important;   /* Ajoute le décalage à gauche */
-  margin-bottom: 1rem;
-}
+  /* 1. On cible toutes les listes dans tes fichiers de contenu */
+  ul {
+    list-style-type: disc !important;
+    /* Force les points */
+    margin-left: 1.5rem !important;
+    /* Ajoute le décalage à gauche */
+    margin-bottom: 1rem;
+  }
 
-ol {
-  list-style-type: decimal !important; /* Force les chiffres 1, 2, 3 */
-  margin-left: 1.5rem !important;      /* Ajoute le décalage à gauche */
-  margin-bottom: 1rem;
-}
+  ol {
+    list-style-type: decimal !important;
+    /* Force les chiffres 1, 2, 3 */
+    margin-left: 1.5rem !important;
+    /* Ajoute le décalage à gauche */
+    margin-bottom: 1rem;
+  }
 
-/* 2. On s'assure que les éléments de liste ont un peu d'espace */
-li {
-  @apply text-base font-neue-haas-grotesk-display-pro font-normal tracking-wider;
-  padding-left: 0.5rem;
-  margin-bottom: 0.25rem;
-  display: list-item; /* Indispensable pour que la puce s'affiche */
-}
+  /* 2. On s'assure que les éléments de liste ont un peu d'espace */
+  li {
+    @apply text-base font-neue-haas-grotesk-display-pro font-normal tracking-wider;
+    padding-left: 0.5rem;
+    margin-bottom: 0.25rem;
+    display: list-item;
+    /* Indispensable pour que la puce s'affiche */
+  }
 
 
-body {
-  margin: 0;
-  background-color: var(--color-white);
-  color: var(--color-darkblue);
-  font-family: var(--font-neue-haas-grotesk);
-}
+  body {
+    margin: 0;
+    background-color: var(--color-white);
+    color: var(--color-darkblue);
+    font-family: var(--font-neue-haas-grotesk);
+  }
 
 }

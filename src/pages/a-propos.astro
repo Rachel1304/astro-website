@@ -22,6 +22,7 @@ import BroderieDisque from '../assets/hobbies/BroderieDisque.png'
 import Musclation from '../assets/hobbies/Musculation.png'
 import Roller from '../assets/hobbies/Roller.png'
 import Illustration from '../assets/hobbies/Illustration.png'
+import CardParcours from '../components/CardParcours.astro'
 import ParcoursDate from '../components/ParcoursDate.astro'
 ---
 
@@ -115,6 +116,106 @@ import ParcoursDate from '../components/ParcoursDate.astro'
       <h4>Mon parcours</h4>
       <ParcoursDate />  
       </div>-->
+    <div
+      class="w-full flex flex-col p-10 gap-10 items-center max-4-xl justify-center"
+    >
+      <div class="w-full flex flex-col items-center justify-center">
+        <h4>Mon parcours</h4>
+        <div
+          class="flex flex-col sm:flex-row gap-4 justify-between items-start"
+        >
+          <div class="flex flex-col gap-4 flex-1/2">
+            <CardParcours
+              titre="Stage Designer Graphique"
+              lieu="Toulouse"
+              date="05/2025 - 07/2025"
+              entreprise="Des Pains & Des Pains"
+              variant="pro"
+            />
+            <CardParcours
+              titre="Community Manager"
+              lieu="Toulouse"
+              date="09/2024 - 09/2025"
+              entreprise="Connect + RNC"
+              variant="pro"
+            />
+            <CardParcours
+              titre="Refonte Identité visuelle Sozinho"
+              lieu="Toulouse"
+              date="23/11/2024 - 27/11/2024"
+              entreprise="Association Sozinho x Brassart x EFAP"
+              variant="pro"
+            />
+            <CardParcours
+              titre="Stage Webdesigner et Graphiste"
+              lieu="Toulouse"
+              date="08/01/2024 - 06/03/2024"
+              entreprise="Agence PICT"
+              variant="pro"
+            />
+            <CardParcours
+              titre="Landing page"
+              lieu="Toulouse"
+              description="Création d'un site web et mise en place sur Wordpress pour le groupe Connect + de chez RNC"
+              date="01/12/2023 - 25/03/2024"
+              entreprise="Connect + RNC"
+              variant="pro"
+            />
+          </div>
+          <div class="flex flex-col gap-4 flex-1/2">
+            <CardParcours
+              titre="CDI Leclerc Drive Blagnac"
+              lieu="Blagnac"
+              date="10/2025 - Aujourd'hui"
+              entreprise="Brassart"
+              variant="extra"
+            />
+            <CardParcours
+              titre="Responsable bénévolat"
+              lieu="Toulouse"
+              description="Gestion des sections sportives Kick-boxing et Musculation, de leurs matériels, inscriptions/réinscription, présentations des activités ainsi que du bon fonctionnement des activités"
+              date="2022 - 2025"
+              entreprise="Association Sportive et Culturelle de la Gendarmerie Midi-Pyrénées (A.S.C.G.M.P)"
+              variant="extra"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="w-full flex flex-col items-center justify-center max-w-4xl">
+        <h4>Formations</h4>
+        <div
+          class="w-full flex flex-col sm:flex-row gap-4 justify-between items-start"
+        >
+          <div class="flex flex-col gap-4 flex-1/2">
+            <CardParcours
+              titre="Bachelor Design Graphique et Digital"
+              lieu="Toulouse"
+              date="2022 - 2025"
+              description="Formation en design graphique et webdesign"
+              entreprise="Brassart"
+              variant="pro"
+            />
+            <CardParcours
+              titre="Année Préparatoire en Arts Appliqués"
+              lieu="Toulouse"
+              date="2021 - 2022"
+              entreprise="Brassart"
+              variant="pro"
+            />
+          </div>
+          <div class="flex flex-col gap-4 flex-1/2">
+            <CardParcours
+              titre="Baccalauréat Général"
+              lieu="Toulouse"
+              date="2021"
+              description="Spécialités Numérique Science Informatique (NSI) et Sciences de l'Ingénieur (SI"
+              entreprise="Saint Joseph La Salle"
+              variant="extra"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="w-full flex flex-col bg-blue p-10 items-center">
       <div class="flex max-w-4xl w-full items-start">

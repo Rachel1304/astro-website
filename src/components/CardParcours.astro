@@ -1,0 +1,29 @@
+---
+interface Props {
+  titre: string
+  lieu: string
+  date: string
+  description?: string
+  entreprise: string
+  variant: 'pro' | 'extra'
+  details?: string[] //mes puces sous forme de tableau
+  groupName?: string //cta btn fermer
+}
+
+const colorMap = {
+  pro: 'var(--color-red)',
+  extra: 'var(--color-blue)',
+}
+
+const borderColor = colorMap[Astro.props.variant] || 'var(--color-red)'
+---
+
+<div
+  class="flex flex-col border-l-2 pl-4 w-full max-w-[420px]"
+  style={`border-color: ${borderColor};`}
+>
+  <date>{Astro.props.date}</date>
+  <strong class="text-lg">{Astro.props.titre}</strong>
+  <p class="mb-0">{Astro.props.description}</p>
+  <info>{Astro.props.entreprise}_{Astro.props.lieu}</info>
+</div>
